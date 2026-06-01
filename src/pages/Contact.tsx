@@ -14,23 +14,23 @@ const contacts = [
 const reachOptions = [
   {
     title: 'Instagram',
-    desc: 'Follow our journey and see our latest sustainable construction projects and material studies.',
+    desc: 'Follow our journey — real project photos, material studies, and behind-the-scenes sustainable construction in Chennai.',
     image: instagramImg,
-    alt: 'Shubham Instagram social media sustainable architecture projects',
-    link: 'https://www.instagram.com/subham_consulting'
+    alt: 'Subham Consulting Instagram – sustainable construction projects Chennai',
+    link: 'https://www.instagram.com/subhamconsulting/'
   },
   {
     title: 'LinkedIn',
-    desc: 'Connect with us for professional consulting, structural analysis, and corporate collaborations.',
+    desc: 'Connect professionally for consulting inquiries, structural analysis partnerships, and corporate eco-build collaborations.',
     image: linkedinImg,
-    alt: 'Shubham team professional consulting and construction experts',
-    link: 'https://www.linkedin.com/in/subhamconsulting-andconstruction'
+    alt: 'Subham Consulting LinkedIn – sustainable construction experts Chennai',
+    link: 'https://www.linkedin.com/in/subhamconsulting/'
   },
   {
     title: 'Project Inquiry',
-    desc: 'Share your vision for a sustainable space. We respond to every inquiry with a tailored next step.',
+    desc: 'Share your vision for a sustainable space. We respond to every inquiry with a tailored consultation plan.',
     image: projectInquiryImg,
-    alt: 'Shubham project inquiry architectural planning documents sustainable construction',
+    alt: 'Subham Consulting project inquiry – start your sustainable construction project Chennai',
   },
 ];
 

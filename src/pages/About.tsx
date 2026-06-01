@@ -277,34 +277,31 @@ export default function About() {
   const team = [
     {
       img: founderImage,
-      alt: "Sanchana Subbarayan, Founder",
+      alt: "Sanchana Subbarayan – Founder & Civil Engineer, Subham Consulting Chennai",
       name: "Sanchana Subbarayan",
       role: "Founder & Civil Engineer",
-      bio: "With a civil engineering degree and a passion for sustainable construction, Sanchana aims to make practical, beautiful, and accessible sustainable living a reality for everyone in India. Her vision combines traditional building wisdom with modern engineering to create spaces that heal both people and the planet. Join us on this journey towards a greener future.",
+      bio: "With a civil engineering degree and a passion for sustainable construction, Sanchana aims to make practical, beautiful, and accessible sustainable living a reality for everyone in India. Her vision combines traditional building wisdom with modern engineering to create spaces that heal both people and the planet.",
+      isLogo: false,
+      linkedin: "https://www.linkedin.com/in/subhamconsulting/",
     },
     {
       img: paariLogo,
-      // logo: paariLogo,
-      alt: "Paari Design Studio",
+      alt: "Paari Design Studio – Sustainable Architecture Partner Chennai",
       name: "Paari Design Studio",
       role: "Collaborating Design Practice",
-      bio: "Paari Design Studio is a sustainable architecture and design practice rooted in natural materials, climate-responsive spaces, and timeless Indian history, while looking towards the future with a novel outlook. Our work blends earth, craft, and contemporary living to create spaces that feel grounded, meaningful, and deeply connected to nature.",
+      bio: "Paari Design Studio is a sustainable architecture and design practice rooted in natural materials, climate-responsive spaces, and timeless Indian heritage — blending earth, craft, and contemporary living.",
+      isLogo: true,
+      linkedin: null,
     },
     {
       img: abaLogo,
-      // logo: abaLogo,
-      alt: "ABA Architects",
+      alt: "ABA Architects – Architectural Lead Partner",
       name: "ABA Architects",
       role: "Architectural Lead",
-      bio: "ABA Architects brings innovative design solutions that seamlessly integrate sustainable practices with contemporary aesthetics. Specializing in eco-friendly residential and commercial architecture, they focus on creating spaces that are both environmentally responsible and visually striking.",
+      bio: "ABA Architects brings innovative design solutions that seamlessly integrate sustainable practices with contemporary aesthetics, specialising in eco-friendly residential and commercial architecture.",
+      isLogo: true,
+      linkedin: null,
     },
-    // {
-    //   img: constructionSpecialists,
-    //   alt: "Construction specialists on site",
-    //   name: "Construction Specialists",
-    //   role: "Site Execution & Quality",
-    //   bio: "Skilled builders trained in traditional construction methods — rammed earth, mud block, natural COB — executed with modern precision.",
-    // },
   ];
 
   return (
@@ -558,43 +555,107 @@ export default function About() {
         </section>
 
         <section className="bg-brand-bg px-6 md:px-12 lg:px-20 py-16 md:py-20 lg:py-24">
-          <div className="mb-15 md:mb-[60px]">
+          <div className="text-center mb-16 md:mb-[72px]">
             <Reveal as="p" className="top-title mb-3 mt-0">
               The Team
             </Reveal>
             <Reveal as="h2" delay={100} className="font-serif text-[36px] md:text-[48px] text-brand-earth font-normal m-0">
               Experts in Sustainable Design.
             </Reveal>
+            <Reveal delay={180}>
+              <p className="mt-4 max-w-[520px] mx-auto text-[14px] leading-[1.8] text-brand-text/70">
+                Subham Consulting brings together leading civil engineers, architects, and sustainable building specialists to deliver exceptional green construction in Chennai.
+              </p>
+            </Reveal>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-            {team.map((p, i) => (
-              <Reveal key={p.name} delay={i * 120}>
-                <ZoomImage
-                  src={p.img}
-                  alt={p.alt}
-                  wrapperStyle={{ aspectRatio: "3/4" }}
-                />
-                {(p as any).logo && (
-                  <div className="mt-4 mb-2">
-                    <img
-                      src={(p as any).logo}
-                      alt={`${p.name} logo`}
-                      className="h-12 object-contain"
-                    />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {team.map((member, i) => (
+              <Reveal key={member.name} delay={i * 120}>
+                <div className="group bg-white rounded-[20px] shadow-[0_4px_28px_rgba(31,31,31,0.06)] hover:shadow-[0_20px_60px_rgba(31,31,31,0.13)] hover:-translate-y-2 transition-all duration-500 overflow-hidden h-full flex flex-col">
+
+                  {/* Image area */}
+                  <div className="relative pt-10 pb-6 px-8 flex justify-center bg-brand-parchment/40">
+                    <div
+                      className={`w-36 h-36 rounded-full overflow-hidden ring-4 ring-brand-earth/10 group-hover:ring-brand-earth/30 transition-all duration-500 shadow-[0_8px_24px_rgba(31,31,31,0.10)] ${member.isLogo ? "bg-white p-5 flex items-center justify-center" : ""}`}
+                    >
+                      <img
+                        src={member.img}
+                        alt={member.alt}
+                        loading="lazy"
+                        decoding="async"
+                        className={`transition-transform duration-700 group-hover:scale-105 ${member.isLogo ? "w-full h-full object-contain" : "w-full h-full object-cover"}`}
+                      />
+                    </div>
+                    {/* Decorative line */}
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-[2px] bg-brand-earth/20" />
                   </div>
-                )}
-                <h3 className="font-serif text-[24px] text-brand-earth mt-[18px] mb-0 font-normal leading-tight">
-                  {p.name}
-                </h3>
-                <p className="top-title text-[11px] mt-1.5 mb-0">
-                  {p.role}
-                </p>
-                <p className="mt-2.5 mb-0">
-                  {p.bio}
-                </p>
+
+                  {/* Info area */}
+                  <div className="px-8 pb-8 pt-6 text-center flex flex-col flex-1">
+                    <h3 className="font-serif text-[22px] md:text-[24px] text-brand-earth font-normal leading-tight m-0">
+                      {member.name}
+                    </h3>
+                    <p className="top-title text-[10px] mt-2 mb-0">
+                      {member.role}
+                    </p>
+                    <div className="w-8 h-[1px] bg-brand-earth/20 mx-auto my-5" />
+                    <p className="text-[14px] leading-[1.75] text-brand-text/75 flex-1 m-0">
+                      {member.bio}
+                    </p>
+
+                    {/* Social link */}
+                    {member.linkedin && (
+                      <div className="mt-6 pt-5 border-t border-brand-earth/10">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on LinkedIn`}
+                          className="inline-flex items-center gap-2 text-brand-earth/60 hover:text-brand-earth transition-colors duration-300 font-sans text-[11px] uppercase tracking-[0.14em]"
+                        >
+                          <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                          Connect on LinkedIn
+                        </a>
+                      </div>
+                    )}
+                  </div>
+
+                </div>
               </Reveal>
             ))}
           </div>
+
+          {/* Social CTA */}
+          <Reveal className="mt-16 text-center">
+            <p className="text-[14px] text-brand-text/60 mb-5">Follow our sustainable construction journey</p>
+            <div className="flex justify-center gap-6">
+              <a
+                href="https://www.linkedin.com/in/subhamconsulting/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-brand-earth/70 hover:text-brand-earth transition-colors duration-300 font-sans text-[11px] uppercase tracking-[0.14em] border border-brand-earth/20 hover:border-brand-earth px-5 py-2.5 rounded-full"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a
+                href="https://www.instagram.com/subhamconsulting/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-brand-earth/70 hover:text-brand-earth transition-colors duration-300 font-sans text-[11px] uppercase tracking-[0.14em] border border-brand-earth/20 hover:border-brand-earth px-5 py-2.5 rounded-full"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                </svg>
+                Instagram
+              </a>
+            </div>
+          </Reveal>
         </section>
       </main>
       <style>{`
