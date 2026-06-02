@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import servicesHero       from "../assests/services/shubham-services-sustainable-architecture-hero.png";
-import sustainableConstr  from "../assests/services/shubham-service-sustainable-construction.png";
-import farmhouseDev       from "../assests/services/shubham-service-farmhouse-development.png";
-import institutionalProj  from "../assests/services/shubham-service-institutional-school-project.png";
-import consultingService  from "../assests/services/shubham-service-consulting-construction.png";
-import workshopKnowledge  from "../assests/services/shubham-service-workshop-knowledge-program.png";
-import governmentInfra    from "../assests/services/shubham-service-government-infrastructure.png";
-import realEstateDev      from "../assests/services/shubham-service-real-estate-site-development.png";
-import stoneBanner        from "../assests/services/shubham-services-stone-texture-banner.png";
-import artisanalFinish    from "../assests/services/shubham-services-artisanal-wall-finish.png";
+import servicesHero       from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
+import sustainableConstr  from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
+import farmhouseDev       from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
+import institutionalProj  from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
+import consultingService  from "../assests/images/shubham-delhi-residential-construction.jpeg";
+import workshopKnowledge  from "../assests/images/shubham-construction-progress-01.jpeg";
+import governmentInfra    from "../assests/images/shubham-site-construction-work-01.jpeg";
+import realEstateDev      from "../assests/images/shubham-project-exterior-view-01.jpeg";
+import stoneBanner        from "../assests/images/shubham-natural-material-detail-01.jpeg";
+import artisanalFinish    from "../assests/images/shubham-natural-material-detail-02.jpeg";
 
 // Client work portfolio images
 import portfolioResidence    from "../assests/images/shubham-sustainable-residence-project-01.jpeg";

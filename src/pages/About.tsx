@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
 
 // About page images
-import aboutHero from "../assests/about/shubham-about-sustainable-facade-hero.png";
-import polaroidBackground from "../assests/about/shubham-architectural-interior-background.png";
-import polaroidImage1 from "../assests/about/shubham-interior-detail-polaroid-01.png";
-import polaroidImage2 from "../assests/about/shubham-natural-material-polaroid-02.png";
-import founderImage from "../assests/about/shubham-founder-sanchana-subbarayan.png";
-import associateArchitect from "../assests/about/shubham-associate-architect-team.png";
-import paariStudio from "../assests/about/shubham-paari-design-studio-partner.png";
-import constructionSpecialists from "../assests/about/shubham-construction-specialists-team.png";
-import constructionSite from "../assests/about/shubham-construction-site-natural-materials.png";
-import sustainableDetail from "../assests/about/shubham-sustainable-architecture-detail.png";
-import naturalMaterialPalette from "../assests/about/shubham-natural-material-palette-vision.png";
-import sustainableConstructionProject from "../assests/about/shubham-sustainable-construction-project.png";
+import aboutHero from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
+import polaroidBackground from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
+import polaroidImage1 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
+import polaroidImage2 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
+import founderImage from "../assests/images/shubham-delhi-residential-construction.jpeg";
+import associateArchitect from "../assests/images/shubham-construction-progress-01.jpeg";
+import paariStudio from "../assests/images/shubham-site-construction-work-01.jpeg";
+import constructionSpecialists from "../assests/images/shubham-project-exterior-view-01.jpeg";
+import constructionSite from "../assests/images/shubham-natural-material-detail-01.jpeg";
+import sustainableDetail from "../assests/images/shubham-natural-material-detail-02.jpeg";
+import naturalMaterialPalette from "../assests/images/shubham-sustainable-finish-detail-01.jpeg";
+import sustainableConstructionProject from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
 
 // Partner logos
 import paariLogo from "../assests/Paari logo jpg.jpg.jpeg";

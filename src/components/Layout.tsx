@@ -167,9 +167,9 @@ export default function Layout() {
       {/* FOOTER */}
       <footer className="bg-brand-dark px-10 md:px-20 py-20 pb-12 text-brand-bg/85">
         <div className="text-center mb-16">
-          <h2 className="font-serif text-[36px] md:text-[52px] text-white mb-3">Newsletter</h2>
+          <h2 className="font-serif text-[36px] md:text-[52px] text-white mb-3">Connect with Us</h2>
           <p className="text-[14px] text-white/50 font-light">
-            Join our mailing list for updates on sustainable building and new projects.
+            Stay informed on sustainable architecture, material innovation, and projects that redefine responsible building.
           </p>
           <div className="flex max-w-[480px] mx-auto mt-8 border border-white/25 rounded-[4px] overflow-hidden">
             <input

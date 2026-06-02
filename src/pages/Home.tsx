@@ -1,29 +1,25 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import awards1 from "../assests/awards/awards1.jpeg";
-import awards2 from "../assests/awards/awards2.jpeg";
+import awards1 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
+import awards2 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
 
 // Home page images
-import heroSlide1 from "../assests/home/shubham-sustainable-luxury-home-hero-01.png";
-import heroSlide2 from "../assests/home/shubham-sustainable-luxury-home-hero-02.png";
-import heroSlide3 from "../assests/home/shubham-sustainable-luxury-home-hero-03.png";
-import futureResidence from "../assests/home/shubham-future-ready-residence-exterior.png";
-import solarEnergy from "../assests/home/shubham-solar-energy-system-installation.png";
-import rainwaterHarvesting from "../assests/home/shubham-rainwater-harvesting-system.png";
-import passiveCooling from "../assests/home/shubham-passive-cooling-design-ventilation.png";
-import biogasBioseptic from "../assests/home/shubham-biogas-bioseptic-waste-management.png";
-import clayMaterial from "../assests/home/shubham-clay-wall-natural-material.png";
-import stoneMaterial from "../assests/home/shubham-stone-masonry-construction.png";
-import mudMaterial from "../assests/home/shubham-mud-block-wall-traditional.png";
-import earthMaterial from "../assests/home/shubham-rammed-earth-wall-sustainable.png";
-// ── Use distinct images for Wood and Lime ──────────────────────────────────
-// If you have dedicated assets, swap these imports for the correct files.
-// Currently pointing to the closest available alternatives so every hex cell
-// shows a visually different image rather than repeating clayMaterial.
-import woodMaterial from "../assests/home/shubham-passive-cooling-design-ventilation.png";
-import limeMaterial from "../assests/home/shubham-biogas-bioseptic-waste-management.png";
-import projectLandscape from "../assests/home/shubham-project-landscape-view.png";
+import heroSlide1 from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
+import heroSlide2 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
+import heroSlide3 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
+import futureResidence from "../assests/images/shubham-project-exterior-view-01.jpeg";
+import solarEnergy from "../assests/images/shubham-natural-material-detail-01.jpeg";
+import rainwaterHarvesting from "../assests/images/shubham-natural-material-detail-02.jpeg";
+import passiveCooling from "../assests/images/shubham-craftsmanship-detail-01.jpeg";
+import biogasBioseptic from "../assests/images/shubham-sustainable-finish-detail-01.jpeg";
+import clayMaterial from "../assests/images/shubham-construction-progress-01.jpeg";
+import stoneMaterial from "../assests/images/shubham-site-construction-work-01.jpeg";
+import mudMaterial from "../assests/images/shubham-project-exterior-view-01.jpeg";
+import earthMaterial from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
+import woodMaterial from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
+import limeMaterial from "../assests/images/shubham-delhi-residential-construction.jpeg";
+import projectLandscape from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
 import constructionProject from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
 
 // Client work images — SEO-friendly filenames
