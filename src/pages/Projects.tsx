@@ -4,15 +4,23 @@ import { Link } from "react-router-dom";
 import clientProject1 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
 import clientProject2 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
 import clientProject3 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
-import clientProject4 from "../assests/images/shubham-delhi-residential-construction.jpeg";
 import clientDetail1  from "../assests/images/shubham-natural-material-detail-01.jpeg";
 import clientDetail2  from "../assests/images/shubham-natural-material-detail-02.jpeg";
 import clientDetail3  from "../assests/images/shubham-craftsmanship-detail-01.jpeg";
-import clientDetail4  from "../assests/images/shubham-sustainable-finish-detail-01.jpeg";
-import clientDetail5  from "../assests/images/shubham-construction-progress-01.jpeg";
-import clientDetail6  from "../assests/images/shubham-site-construction-work-01.jpeg";
-import clientDetail7  from "../assests/images/shubham-project-exterior-view-01.jpeg";
 import heroImg        from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
+
+// Delhi project images
+import delhiImg1 from "../assests/images/Delhi/shubham-delhi-residence-01.jpeg";
+import delhiImg2 from "../assests/images/Delhi/shubham-delhi-residence-02.jpeg";
+import delhiImg3 from "../assests/images/Delhi/shubham-delhi-residence-03.jpeg";
+
+// UttarKhand project images
+import ukImg1 from "../assests/images/UttarKhand/shubham-uttarkhand-project-01.jpeg";
+import ukImg2 from "../assests/images/UttarKhand/shubham-uttarkhand-project-02.jpeg";
+import ukImg3 from "../assests/images/UttarKhand/shubham-uttarkhand-project-03.jpeg";
+import ukImg4 from "../assests/images/UttarKhand/shubham-uttarkhand-project-04.jpeg";
+import ukImg5 from "../assests/images/UttarKhand/shubham-uttarkhand-project-05.jpeg";
+import ukImg6 from "../assests/images/UttarKhand/shubham-uttarkhand-project-06.jpeg";
 
 const EASE = "cubic-bezier(0.22,1,0.36,1)";
 
@@ -24,10 +32,11 @@ const projectStories = [
     description:
       "A premium residence built with rammed earth, passive cooling, and handcrafted finishes for a year-round comfortable home.",
     images: [
-      { src: clientProject1, alt: "Exterior view of sustainable villa construction in Chennai" },
-      { src: clientDetail1, alt: "Natural material craftsmanship detail in sustainable villa" },
-      { src: clientDetail5, alt: "Construction progress of eco-friendly residential project" },
-      { src: clientProject2, alt: "Exterior atmosphere of sustainable residence project" },
+      // { src: clientProject1, alt: "Exterior view of sustainable villa construction in Chennai" },
+      // { src: clientDetail1, alt: "Natural material craftsmanship detail in sustainable villa" },
+      { src: clientDetail3, alt: "Natural material craftsmanship detail in sustainable villa" },
+      { src: clientDetail2, alt: "Construction progress of eco-friendly residential project" },
+      { src: ukImg6, alt: "Exterior atmosphere of sustainable residence project" },
     ],
   },
   {
@@ -38,22 +47,36 @@ const projectStories = [
       "A thoughtful institutional building designed for learning, community, and sustainable performance in a school environment.",
     images: [
       { src: clientProject3, alt: "OHAA institutional school project exterior view" },
-      { src: clientDetail2, alt: "Rainwater harvesting and natural material detail at OHAA school" },
-      { src: clientDetail3, alt: "Craftsmanship and structural detail at institutional building" },
-      { src: clientProject4, alt: "Institutional campus exterior with natural finishes" },
+      { src: clientDetail1, alt: "Craftsmanship and structural detail at institutional building" },
+      { src: clientProject1, alt: "Natural material detail at OHAA school" },
+      { src: clientProject2, alt: "OHAA school campus with natural finishes" },
     ],
   },
   {
-    id: "delhi-residence-transformation",
-    title: "Delhi Residence Transformation",
+    id: "delhi-residence-project",
+    title: "Delhi Residence Project",
     location: "Delhi",
     description:
       "A contemporary city home elevated through natural materials, calm interiors, and sustainable construction methods.",
     images: [
-      { src: clientProject4, alt: "Delhi residence sustainable exterior photograph" },
-      { src: clientDetail4, alt: "Natural lime finish and sustainable surface treatment" },
-      { src: clientDetail6, alt: "Site work and construction progress for Delhi residence" },
-      { src: clientDetail7, alt: "Finished exterior facade of sustainable residence" },
+      { src: delhiImg1, alt: "Delhi residence sustainable construction – Shubham Consulting" },
+      { src: delhiImg2, alt: "Delhi residence interior and material detail" },
+      { src: delhiImg3, alt: "Delhi residence exterior and facade view" },
+    ],
+  },
+  {
+    id: "uttarkhand-project",
+    title: "Uttarkhand Project",
+    location: "Uttarakhand",
+    description:
+      "A nature-integrated build in the Himalayas, combining traditional mountain vernacular with modern sustainable engineering and natural materials.",
+    images: [
+      { src: ukImg1, alt: "Uttarkhand sustainable project exterior – Shubham Consulting" },
+      { src: ukImg2, alt: "Uttarkhand project construction detail and natural materials" },
+      { src: ukImg3, alt: "Uttarkhand project site and landscape view" },
+      { src: ukImg4, alt: "Uttarkhand project structural and material close-up" },
+      { src: ukImg5, alt: "Uttarkhand project progress and craftsmanship" },
+      { src: ukImg6, alt: "Uttarkhand project finished view and atmosphere" },
     ],
   },
 ];
@@ -139,11 +162,11 @@ export default function Projects() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-[#141414]/75 via-[#1F1F1F]/35 to-[#1F1F1F]/15" />
         <div className="absolute inset-x-0 bottom-[16%] mx-auto max-w-[860px] px-6 md:px-12 lg:px-20 text-center">
-          <div className="inline-flex items-center justify-center gap-3 mb-5">
+          {/* <div className="inline-flex items-center justify-center gap-3 mb-5">
             <span className="text-[11px] uppercase tracking-[0.28em] text-white/70">Portfolio</span>
             <span className="h-px w-14 bg-white/25" />
             <span className="text-[11px] uppercase tracking-[0.28em] text-white/70">Real Projects Only</span>
-          </div>
+          </div> */}
           <h1 className="font-serif text-[40px] sm:text-[52px] md:text-[62px] lg:text-[72px] text-white leading-tight tracking-[-0.04em]">
             <span className={`block transition-all duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${heroLoaded.l1 ? "translate-y-0 opacity-100" : "translate-y-[40px] opacity-0"}`}>
               Real project stories, told through crafted photography.
@@ -197,6 +220,21 @@ export default function Projects() {
                           </div>
                         ))}
                       </div>
+                      {project.images.length > 3 && (
+                        <div className={`grid gap-3 ${project.images.slice(3).length === 1 ? '' : project.images.slice(3).length === 2 ? 'sm:grid-cols-2' : project.images.slice(3).length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-3'}`}>
+                          {project.images.slice(3).map((image) => (
+                            <div key={image.alt} className="overflow-hidden rounded-[24px] bg-white/5 shadow-[0_20px_45px_rgba(31,31,31,0.08)]">
+                              <img
+                                src={image.src}
+                                alt={image.alt}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full h-[160px] object-cover transition-transform duration-700 hover:scale-[1.03]"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex flex-col justify-center items-center gap-6">

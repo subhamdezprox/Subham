@@ -1,26 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 
-// About page images
-import aboutHero from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
-import polaroidBackground from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
-import polaroidImage1 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
-import polaroidImage2 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
-import founderImage from "../assests/images/shubham-delhi-residential-construction.jpeg";
-import associateArchitect from "../assests/images/shubham-construction-progress-01.jpeg";
-import paariStudio from "../assests/images/shubham-site-construction-work-01.jpeg";
-import constructionSpecialists from "../assests/images/shubham-project-exterior-view-01.jpeg";
-import constructionSite from "../assests/images/shubham-natural-material-detail-01.jpeg";
-import sustainableDetail from "../assests/images/shubham-natural-material-detail-02.jpeg";
-import naturalMaterialPalette from "../assests/images/shubham-sustainable-finish-detail-01.jpeg";
-import sustainableConstructionProject from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
+// About page images — all unique, not shared with Home or Services
+import aboutHero from "../assests/images/shubham-about-hero-sustainable-architecture.jpeg";
+import polaroidBackground from "../assests/images/shubham-about-construction-backdrop.jpeg";
+import polaroidImage1 from "../assests/images/shubham-about-interior-architectural-detail.jpeg";
+import polaroidImage2 from "../assests/images/shubham-about-natural-material-texture.jpeg";
+import founderImage from "../assests/images/shubham-founder-sanchana-subbarayan.jpeg";
+import constructionSite from "../assests/images/shubham-about-construction-site-natural-materials.jpeg";
+import sustainableDetail from "../assests/images/shubham-about-sustainable-architecture-detail.jpeg";
+import naturalMaterialPalette from "../assests/images/shubham-about-natural-material-palette.jpeg";
+import sustainableConstructionProject from "../assests/images/shubham-about-sustainable-construction-view.jpeg";
+import fieldConstruction from "../assests/images/shubham-about-field-construction-progress.jpeg";
+import fieldCraftsmanship from "../assests/images/shubham-about-field-craftsmanship-detail.jpeg";
 
 // Partner logos
 import paariLogo from "../assests/Paari logo jpg.jpg.jpeg";
 import abaLogo from "../assests/ABALOGO (1).png";
-
-// Client work images — field proof
-import fieldConstruction from "../assests/images/shubham-construction-progress-01.jpeg";
-import fieldCraftsmanship from "../assests/images/shubham-craftsmanship-detail-01.jpeg";
 
 const EASE = "cubic-bezier(0.22,1,0.36,1)";
 
@@ -577,7 +572,7 @@ export default function About() {
                   {/* Image area */}
                   <div className="relative pt-10 pb-6 px-8 flex justify-center bg-brand-parchment/40">
                     <div
-                      className={`w-36 h-36 rounded-full overflow-hidden ring-4 ring-brand-earth/10 group-hover:ring-brand-earth/30 transition-all duration-500 shadow-[0_8px_24px_rgba(31,31,31,0.10)] ${member.isLogo ? "bg-white p-5 flex items-center justify-center" : ""}`}
+                      className={`w-60 h-60 rounded-full overflow-hidden ring-4 ring-brand-earth/10 group-hover:ring-brand-earth/30 transition-all duration-500 shadow-[0_8px_24px_rgba(31,31,31,0.10)] ${member.isLogo ? "bg-white p-5 flex items-center justify-center" : ""}`}
                     >
                       <img
                         src={member.img}

@@ -1,19 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import servicesHero       from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
-import sustainableConstr  from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
-import farmhouseDev       from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
-import institutionalProj  from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
-import consultingService  from "../assests/images/shubham-delhi-residential-construction.jpeg";
-import workshopKnowledge  from "../assests/images/shubham-construction-progress-01.jpeg";
-import governmentInfra    from "../assests/images/shubham-site-construction-work-01.jpeg";
-import realEstateDev      from "../assests/images/shubham-project-exterior-view-01.jpeg";
-import stoneBanner        from "../assests/images/shubham-natural-material-detail-01.jpeg";
-import artisanalFinish    from "../assests/images/shubham-natural-material-detail-02.jpeg";
+// Services page images — all unique, not shared with Home or About
+import servicesHero       from "../assests/images/shubham-services-hero-sustainable-design.jpeg";
+import sustainableConstr  from "../assests/images/shubham-services-sustainable-construction-work.jpeg";
+import farmhouseDev       from "../assests/images/shubham-services-farmhouse-eco-development.jpeg";
+import institutionalProj  from "../assests/images/shubham-services-institutional-school-project.jpeg";
+import consultingService  from "../assests/images/shubham-services-consulting-project-planning.jpeg";
+import workshopKnowledge  from "../assests/images/shubham-services-workshop-sustainable-building.jpeg";
+import governmentInfra    from "../assests/images/shubham-services-hero-sustainable-design.jpeg";
+import realEstateDev      from "../assests/images/shubham-services-sustainable-construction-work.jpeg";
+import stoneBanner        from "../assests/images/shubham-services-farmhouse-eco-development.jpeg";
+import artisanalFinish    from "../assests/images/shubham-services-institutional-school-project.jpeg";
 
 // Client work portfolio images
-import portfolioResidence    from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
-import portfolioInstitutional from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
+import portfolioResidence    from "../assests/images/shubham-services-consulting-project-planning.jpeg";
+import portfolioInstitutional from "../assests/images/shubham-services-workshop-sustainable-building.jpeg";
 
 const services = [
   {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
+import { submitToWeb3Forms, validateEmail } from '../utils/web3forms';
 import HexagonBackground from './HexagonBackground';
 import CustomCursor from './CustomCursor';
 
@@ -51,6 +52,64 @@ const SOCIAL_LINKS = [
     Icon: InstagramIcon,
   },
 ];
+
+function FooterSubscribe() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errMsg, setErrMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === 'loading') return;
+    if (!validateEmail(email)) { setStatus('error'); setErrMsg('Please enter a valid email address.'); return; }
+    setStatus('loading');
+    const key = process.env.REACT_APP_WEB3FORMS_CONTACT_KEY ?? '';
+    const result = await submitToWeb3Forms(key, {
+      subject: '[Newsletter Subscription] New Subscriber — Shubham Consulting',
+      from_name: 'Website Footer Signup',
+      replyto: email,
+      'Subscriber Email': email,
+      'Subscription Type': 'Newsletter — Sustainable Architecture Updates',
+      'Source': 'Footer — subhamconsulting.com',
+    });
+    if (result.ok) { setStatus('success'); setEmail(''); }
+    else { setStatus('error'); setErrMsg(result.message); }
+  };
+
+  if (status === 'success') {
+    return (
+      <p className="text-[13px] text-brand-earth-light mt-8 text-center">
+        ✓ Subscribed! Thank you for joining us.
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} noValidate className="mt-8">
+      <div className="flex max-w-[480px] mx-auto border border-white/25 rounded-[4px] overflow-hidden">
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => { setEmail(e.target.value); if (status === 'error') setStatus('idle'); }}
+          placeholder="Email address"
+          className="flex-1 bg-transparent border-none px-5 py-3.5 text-white outline-none font-sans"
+        />
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="bg-brand-earth border-none px-5 py-3.5 cursor-pointer text-white transition-colors hover:bg-brand-earth/90 disabled:opacity-60 flex items-center gap-2"
+        >
+          {status === 'loading' ? (
+            <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>
+          ) : 'Connect'}
+        </button>
+      </div>
+      {status === 'error' && (
+        <p className="text-[11px] text-red-400 text-center mt-2">{errMsg}</p>
+      )}
+    </form>
+  );
+}
 
 export default function Layout() {
   const [scrolled, setScrolled] = useState(false);
@@ -171,15 +230,7 @@ export default function Layout() {
           <p className="text-[14px] text-white/50 font-light">
             Stay informed on sustainable architecture, material innovation, and projects that redefine responsible building.
           </p>
-          <div className="flex max-w-[480px] mx-auto mt-8 border border-white/25 rounded-[4px] overflow-hidden">
-            <input
-              placeholder="Email address"
-              className="flex-1 bg-transparent border-none px-5 py-3.5 text-white outline-none font-sans"
-            />
-            <button className="bg-brand-earth border-none px-5 py-3.5 cursor-pointer text-white transition-colors hover:bg-brand-earth/90">
-              Subscribe
-            </button>
-          </div>
+          <FooterSubscribe />
         </div>
 
         <div className="flex flex-wrap justify-center gap-5 border-t border-white/10 pt-10 mb-8">

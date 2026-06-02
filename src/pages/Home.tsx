@@ -1,8 +1,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import awards1 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
-import awards2 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
+import awards1 from "../assests/awards/awards1.jpeg";
+import awards2 from "../assests/awards/awards2.jpeg";
 
 // Home page images
 import heroSlide1 from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
@@ -22,18 +22,10 @@ import limeMaterial from "../assests/images/shubham-delhi-residential-constructi
 import projectLandscape from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
 import constructionProject from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
 
-// Client work images — SEO-friendly filenames
+// Client work images
 import clientProject1 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
 import clientProject2 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
 import clientProject3 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
-import clientProject4 from "../assests/images/shubham-delhi-residential-construction.jpeg";
-import clientDetail1 from "../assests/images/shubham-natural-material-detail-01.jpeg";
-import clientDetail2 from "../assests/images/shubham-natural-material-detail-02.jpeg";
-import clientDetail3 from "../assests/images/shubham-craftsmanship-detail-01.jpeg";
-import clientDetail4 from "../assests/images/shubham-sustainable-finish-detail-01.jpeg";
-import clientDetail5 from "../assests/images/shubham-construction-progress-01.jpeg";
-import clientDetail6 from "../assests/images/shubham-site-construction-work-01.jpeg";
-import clientDetail7 from "../assests/images/shubham-project-exterior-view-01.jpeg";
 
 const SLIDES = [heroSlide1, heroSlide2, heroSlide3];
 
@@ -328,84 +320,61 @@ export default function Home() {
       </section>
 
       {/* ─── MATERIALS OF WISDOM ──────────────────────────────────────────── */}
-      <section className="bg-brand-bg py-16 md:py-24 px-6 md:px-12 lg:px-20 relative overflow-hidden">
-        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="bg-brand-bg py-16 md:py-24 overflow-hidden">
 
-          {/* Left: text */}
-          <div className="reveal">
-            <span className="top-title mb-3">Materials of Wisdom</span>
-            <h2 className="text-[28px] sm:text-[36px] md:text-[48px] text-brand-earth mt-3 mb-8 md:mb-10 leading-tight">
-              Traditional Materials.<br />Modern Engineering.
-            </h2>
-            <div className="space-y-8 md:space-y-12">
+        {/* Header row */}
+        <div className="px-6 md:px-12 lg:px-20 mb-10 md:mb-14">
+          <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-end">
+            <div className="reveal">
+              <span className="top-title mb-3">Materials of Wisdom</span>
+              <h2 className="text-[28px] sm:text-[36px] md:text-[48px] text-brand-earth mt-3 leading-tight">
+                Traditional Materials.<br />Modern Engineering.
+              </h2>
+            </div>
+            <div className="reveal space-y-5">
               {[
                 { h: "Rammed Earth & Mud Blocks", b: "Breathable, thermal-efficient walls that provide natural insulation and a unique organic aesthetic." },
                 { h: "Natural COB & Stone",        b: "Utilizing foundation stones and natural COB for structural integrity that honours building heritage." },
                 { h: "Artisanal Finishes",         b: "Lime plasters, traditional textures, and Madras terrace roofing for timeless elegance and health." },
               ].map((s) => (
-                <div key={s.h} className="pt-6 md:pt-7 border-t border-brand-earth/20 max-w-[420px]">
-                  <h3 className="text-[20px] md:text-[24px] text-brand-earth leading-tight mb-2 md:mb-3">{s.h}</h3>
-                  <p className="text-[14px] md:text-base">{s.b}</p>
+                <div key={s.h} className="pt-4 border-t border-brand-earth/20">
+                  <h3 className="text-[17px] md:text-[19px] text-brand-earth leading-tight mb-1">{s.h}</h3>
+                  <p className="text-[13px] md:text-[14px]">{s.b}</p>
                 </div>
               ))}
             </div>
-          </div>
-
-          {/* Right: material grid — MOBILE/TABLET: responsive grid, DESKTOP: circular hex */}
-          <div className="reveal">
-
-            {/* ── Mobile & Tablet: 2-col grid (visible below lg) ── */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:hidden">
-              {MATERIALS.map((hex) => (
-                <div key={hex.label} className="flex flex-col items-center gap-2 group">
-                  <div className="w-full aspect-square hexagon-clip overflow-hidden shadow-md">
-                    <img
-                      src={hex.src}
-                      alt={hex.label}
-                      loading="lazy"
-                      decoding="async"
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                  </div>
-                  <span className="font-sans text-[10px] uppercase tracking-[0.2em] text-brand-earth">
-                    {hex.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* ── Desktop: original circular absolute layout (visible lg+) ── */}
-            <div className="hidden lg:flex justify-center items-center h-[700px]">
-              <div className="hexagon-container relative w-full h-full">
-                {MATERIALS.map((hex, i) => (
-                  <div
-                    key={i}
-                    className="hexagon-item flex flex-col items-center group absolute"
-                    style={{ transform: `translate(calc(50% + ${hex.x}px - 96px), calc(50% + ${hex.y}px - 104px))` }}
-                  >
-                    <div className="w-48 h-52 hexagon-clip overflow-hidden shadow-xl">
-                      <img
-                        src={hex.src}
-                        alt={hex.label}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                    </div>
-                    <span className="mt-3 font-sans text-[10px] uppercase tracking-[0.2em] text-brand-earth opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {hex.label}
-                    </span>
-                  </div>
-                ))}
-                {/* Central logo */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[182px] h-[182px] bg-brand-bg rounded-full flex items-center justify-center border border-brand-earth/30 shadow-inner">
-                  <img src="/Subam Logo.png" alt="Shubham" className="w-[100px] opacity-90" />
-                </div>
-              </div>
-            </div>
-
           </div>
         </div>
+
+        {/* Material image gallery */}
+        <div className="px-6 md:px-12 lg:px-20">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+              {MATERIALS.map((mat) => (
+                <article
+                  key={mat.label}
+                  className="reveal group relative overflow-hidden rounded-[10px] md:rounded-[14px] shadow-[0_8px_32px_rgba(31,31,31,0.12)]"
+                >
+                  <div className="aspect-[3/4] w-full overflow-hidden">
+                    <img
+                      src={mat.src}
+                      alt={`${mat.label} – natural building material – Shubham Consulting`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F]/70 via-[#1F1F1F]/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                    <p className="font-sans text-[9px] md:text-[10px] uppercase tracking-[0.22em] text-white/65 mb-1">Natural Material</p>
+                    <h3 className="font-serif text-[22px] md:text-[26px] text-white leading-none">{mat.label}</h3>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </section>
 
       {/* ─── QUOTE BLEED ──────────────────────────────────────────────────── */}

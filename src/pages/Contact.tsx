@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { submitToWeb3Forms, validateEmail } from '../utils/web3forms';
 
 import contactHero       from '../assests/contact/shubham-contact-studio-interior-hero.png';
 import instagramImg      from '../assests/contact/shubham-contact-instagram-social-media.png';
@@ -73,8 +74,10 @@ export default function Contact() {
   const [heroLoaded, setHeroLoaded] = useState({ l1: false, l2: false, scroll: false });
   const [cardHovered, setCardHovered] = useState<any>({});
   const [rowHovered, setRowHovered] = useState<any>({});
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
@@ -104,10 +107,43 @@ export default function Contact() {
   const isMobile = windowWidth <= 768;
   const heroParallax = scrollY * 0.15;
 
-  const onChange = (k: string) => (e: any) => setForm((f) => ({ ...f, [k]: e.target.value }));
-  const onSubmit = (e: any) => {
+  const onChange = (k: string) => (e: any) => {
+    setForm((f) => ({ ...f, [k]: e.target.value }));
+    if (errors[k]) setErrors((prev) => { const n = { ...prev }; delete n[k]; return n; });
+  };
+
+  const validate = () => {
+    const e: Record<string, string> = {};
+    if (!form.name.trim()) e.name = 'Full name is required';
+    if (!form.email.trim()) e.email = 'Email is required';
+    else if (!validateEmail(form.email)) e.email = 'Enter a valid email address';
+    if (!form.message.trim()) e.message = 'Message is required';
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const onSubmit = async (e: any) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!validate() || status === 'loading') return;
+    setStatus('loading');
+    const key = process.env.REACT_APP_WEB3FORMS_CONTACT_KEY ?? '';
+    const result = await submitToWeb3Forms(key, {
+      subject: `[Contact Inquiry] ${form.name} — Shubham Consulting`,
+      from_name: form.name,
+      replyto: form.email,
+      'Full Name': form.name,
+      'Email Address': form.email,
+      'Phone Number': form.phone || 'Not provided',
+      'Message': form.message,
+      'Source Page': 'Contact Page — subhamconsulting.com',
+    });
+    if (result.ok) {
+      setStatus('success');
+      setForm({ name: '', email: '', phone: '', message: '' });
+    } else {
+      setStatus('error');
+      setErrorMsg(result.message);
+    }
   };
 
   return (
@@ -182,56 +218,82 @@ export default function Contact() {
 
             {/* FORM */}
             <Reveal delay={200} className="bg-brand-parchment p-8 md:p-14 rounded-[2px]">
-              {submitted ? (
+              {status === 'success' ? (
                 <div className="text-center py-10">
+                  <div className="w-16 h-16 bg-brand-earth/10 text-brand-earth rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                  </div>
                   <h3 className="font-serif text-[32px] text-brand-earth mb-4">Thank You</h3>
-                  <p>Your message has been received. We will get back to you within two working days.</p>
+                  <p className="mb-8">Your message has been received. We will get back to you within two working days.</p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="font-sans text-[11px] uppercase tracking-[0.2em] text-brand-earth border-b border-brand-earth/40 pb-0.5 hover:border-brand-earth transition-colors"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               ) : (
-                <form onSubmit={onSubmit} className="space-y-8">
+                <form onSubmit={onSubmit} className="space-y-8" noValidate>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                      <label className="top-title mb-2">Full Name</label>
+                      <label className="top-title mb-2">Full Name*</label>
                       <input
                         type="text"
                         name="name"
                         value={form.name}
                         onChange={onChange('name')}
-                        required
-                        className="w-full bg-transparent border-b border-brand-earth/30 py-2 focus:border-brand-earth outline-none transition-colors"
+                        className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors ${errors.name ? 'border-red-400' : 'border-brand-earth/30'}`}
                         placeholder="John Doe"
                       />
+                      {errors.name && <span className="text-[11px] text-red-500 mt-1 block">{errors.name}</span>}
                     </div>
                     <div>
-                      <label className="top-title mb-2">Email Address</label>
+                      <label className="top-title mb-2">Email Address*</label>
                       <input
                         type="email"
                         name="email"
                         value={form.email}
                         onChange={onChange('email')}
-                        required
-                        className="w-full bg-transparent border-b border-brand-earth/30 py-2 focus:border-brand-earth outline-none transition-colors"
+                        className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors ${errors.email ? 'border-red-400' : 'border-brand-earth/30'}`}
                         placeholder="john@example.com"
                       />
+                      {errors.email && <span className="text-[11px] text-red-500 mt-1 block">{errors.email}</span>}
                     </div>
                   </div>
                   <div>
-                    <label className="top-title mb-2">Message</label>
+                    <label className="top-title mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={form.phone}
+                      onChange={onChange('phone')}
+                      className="w-full bg-transparent border-b border-brand-earth/30 py-2 focus:border-brand-earth outline-none transition-colors"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
+                  <div>
+                    <label className="top-title mb-2">Message*</label>
                     <textarea
                       name="message"
                       value={form.message}
                       onChange={onChange('message')}
-                      required
                       rows={4}
-                      className="w-full bg-transparent border-b border-brand-earth/30 py-2 focus:border-brand-earth outline-none transition-colors resize-none"
+                      className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors resize-none ${errors.message ? 'border-red-400' : 'border-brand-earth/30'}`}
                       placeholder="Tell us about your project..."
                     />
+                    {errors.message && <span className="text-[11px] text-red-500 mt-1 block">{errors.message}</span>}
                   </div>
+                  {status === 'error' && (
+                    <p className="text-[12px] text-red-500 bg-red-50 px-4 py-3 rounded-[2px]">{errorMsg}</p>
+                  )}
                   <button
                     type="submit"
-                    className="w-full bg-brand-earth text-white font-sans text-[12px] uppercase tracking-[0.2em] py-5 rounded-[2px] hover:bg-brand-earth-light transition-colors duration-300"
+                    disabled={status === 'loading'}
+                    className={`w-full bg-brand-earth text-white font-sans text-[12px] uppercase tracking-[0.2em] py-5 rounded-[2px] transition-colors duration-300 flex items-center justify-center gap-3 ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-brand-earth-light'}`}
                   >
-                    Send Message
+                    {status === 'loading' ? (
+                      <><svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>Sending…</>
+                    ) : 'Send Message'}
                   </button>
                 </form>
               )}

@@ -469,6 +469,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import careersHero from '../assests/contact/shubham-careers-team-working-hero.png';
+import { submitToWeb3Forms, validateEmail, validatePhone } from '../utils/web3forms';
 
 function Reveal({ children, delay = 0, as: Tag = 'div' as any, style = {}, className = '', ...rest }: any) {
   const ref = useRef<any>(null);
@@ -551,24 +552,15 @@ export default function Careers() {
   const validate = () => {
     const newErrors: Record<string, string> = {};
     if (!formData.fullName.trim()) newErrors.fullName = 'Full name is required';
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Invalid email format';
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
-    } else if (!/^\d{10,12}$/.test(formData.phone.replace(/\D/g, ''))) {
-      newErrors.phone = 'Invalid phone number';
-    }
-    if (formData.experience && (parseInt(formData.experience) < 0 || parseInt(formData.experience) > 50)) {
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    else if (!validateEmail(formData.email)) newErrors.email = 'Invalid email format';
+    if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
+    else if (!validatePhone(formData.phone)) newErrors.phone = 'Enter a valid 10–12 digit number';
+    if (formData.experience && (parseInt(formData.experience) < 0 || parseInt(formData.experience) > 50))
       newErrors.experience = 'Experience must be between 0 and 50 years';
-    }
-    if (formData.portfolioUrl && !/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(formData.portfolioUrl)) {
+    if (formData.portfolioUrl && !/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(formData.portfolioUrl))
       newErrors.portfolioUrl = 'Invalid URL format';
-    }
     if (!formData.consent) newErrors.consent = 'You must consent to data processing';
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -581,27 +573,32 @@ export default function Careers() {
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
     }
-    if (errors[name]) {
-      setErrors(prev => {
-        const updated = { ...prev };
-        delete updated[name];
-        return updated;
-      });
-    }
+    if (errors[name]) setErrors(prev => { const u = { ...prev }; delete u[name]; return u; });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) return;
-
+    if (!validate() || loading) return;
     setLoading(true);
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+    const key = process.env.REACT_APP_WEB3FORMS_CAREERS_KEY ?? '';
+    const result = await submitToWeb3Forms(key, {
+      subject: `[Job Application] ${formData.fullName} — Shubham Consulting`,
+      from_name: formData.fullName,
+      replyto: formData.email,
+      'Full Name': formData.fullName,
+      'Email Address': formData.email,
+      'Phone Number': `${formData.countryCode} ${formData.phone}`,
+      'Current Position': formData.currentTitle || 'Not specified',
+      'Years of Experience': formData.experience || 'Not specified',
+      'Portfolio / LinkedIn URL': formData.portfolioUrl || 'Not provided',
+      'Source Page': 'Careers Page — subhamconsulting.com',
+    });
+    setLoading(false);
+    if (result.ok) {
       setSubmitted(true);
-    } catch (error) {
-      setErrors({ submit: 'Something went wrong. Please try again later.' });
-    } finally {
-      setLoading(false);
+      setFormData({ fullName: '', email: '', countryCode: '+91', phone: '', currentTitle: '', experience: '', portfolioUrl: '', consent: false });
+    } else {
+      setErrors({ submit: result.message });
     }
   };
 
