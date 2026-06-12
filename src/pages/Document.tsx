@@ -4,24 +4,30 @@ import PageSEO from "../components/PageSEO";
 
 // Document page images
 import heroSlide1 from "../assests/documentation/traditional-mud-plaster-craftsmanship.jpg";
-import heroSlide2 from "../assests/images/subham-sustainable-residence-project-01.jpeg";
-import heroSlide3 from "../assests/images/subham-sustainable-residence-project-02.jpeg";
+// import heroSlide2 from "../assests/documentation/village-house-with-clay-roofing.jpg";
+// import heroSlide3 from "../assests/images/subham-sustainable-residence-project-02.jpeg";
 import delhiImage from "../assests/images/subham-delhi-residential-construction.jpeg";
 import uttarakhandImage from "../assests/images/subham-project-exterior-view-01.jpeg";
 import bleedImage1 from "../assests/documentation/sustainable-natural-building-construction-site.jpg";
 import constructionProject from "../assests/images/subham-golden-hour-project-exterior.jpeg";
 
 // Documentation gallery images - Tirunelveli section
-import tirunelveliImage from "../assests/documentation/tirunelveli-traditional-mud-house-exterior.jpg";
+import tirunelveliImage from "../assests/documentation/traditional-architecture-project-update.jpg";
+import tirunelveliImage2 from "../assests/documentation/tirunelveli-traditional-mud-house-exterior.jpg";
 import craftsmanshipImage from "../assests/documentation/traditional-mud-wall-craftsmanship-detail.jpg";
 import heritageBuildingImage from "../assests/documentation/heritage-building-natural-materials.jpg";
 import stoneMudArchitecture from "../assests/documentation/traditional-stone-and-mud-architecture.jpg";
 import localArtisan from "../assests/documentation/local-artisan-natural-construction-work.jpg";
 import mudPlaster from "../assests/documentation/traditional-mud-plaster-craftsmanship.jpg";
 import heritagePreservation from "../assests/documentation/heritage-mud-building-preservation.jpg";
-import bleedImage2 from "../assests/images/subham-craftsmanship-detail-01.jpeg";
+import bleedImage2 from "../assests/documentation/traditional-building-techniques-documentation.jpg";
+import subhamVillage from "../assests/documentation/heritage-conservation-documentation.jpg";
+import subhamVillage2 from "../assests/documentation/tirunelveli-rural-architecture-exploration.jpg";
+import subhamVillage3 from "../assests/documentation/tirunelveli-documentation-social-media-post.jpg";
 
-const SLIDES = [heroSlide1, heroSlide2, heroSlide3];
+
+
+const SLIDES = [heroSlide1];
 
 export default function Document() {
   const [loaded, setLoaded] = useState(false);
@@ -235,6 +241,14 @@ export default function Document() {
                 in these regions continue living in natural buildings. Not only are these homes beautiful, but they
                 are also healthy, climate-responsive, and incredibly strong.
               </p>
+                <img
+                  src={tirunelveliImage2}
+                  alt="Tirunelveli traditional mud house exterior"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-[235px] object-cover rounded-[14px] transition-transform duration-700 group-hover:scale-[1.05]"
+                />
+
             </div>
             <div className="relative">
               <div className="reveal overflow-hidden rounded-[14px] shadow-[0_20px_50px_rgba(31,31,31,0.08)] group">
@@ -243,7 +257,7 @@ export default function Document() {
                   alt="Tirunelveli traditional mud house exterior"
                   loading="lazy"
                   decoding="async"
-                  className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.05]"
+                  className="w-full aspect-[4/3] h-[600px] object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                 />
               </div>
             </div>
@@ -252,8 +266,8 @@ export default function Document() {
           {/* Photo Gallery Grid */}
           <div className="mb-12">
             <div className="reveal mb-6">
-              <h3 className="font-serif text-[22px] md:text-[26px] text-brand-earth mb-2">Documentation Gallery</h3>
-              <p className="text-[14px] md:text-base text-brand-text/70">
+              <h3 className="font-serif text-[22px] md:text-[36px] text-brand-earth mb-2">Documentation Gallery</h3>
+              <p className="text-[14px] md:text-[18px] text-brand-text/70">
                 Capturing the essence of traditional sustainable architecture in Tirunelveli
               </p>
             </div>
@@ -265,6 +279,9 @@ export default function Document() {
                 { src: localArtisan, alt: "Local artisan working on natural construction" },
                 { src: mudPlaster, alt: "Traditional mud plaster craftsmanship" },
                 { src: heritagePreservation, alt: "Heritage mud building preservation" },
+                { src: subhamVillage, alt: "Heritage mud building preservation" },
+                { src: subhamVillage2, alt: "Heritage mud building preservation" },
+                { src: subhamVillage3, alt: "Heritage mud building preservation" },
               ].map((photo, i) => (
                 <div key={i} className="reveal overflow-hidden rounded-[14px] shadow-[0_20px_50px_rgba(31,31,31,0.08)] group" style={{ transitionDelay: `${i * 100}ms` }}>
                   <img

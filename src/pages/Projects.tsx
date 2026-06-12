@@ -100,7 +100,7 @@ const projectStories = [
   {
     id: "ohaa-green-school-campus",
     title: "OHAA Green School Campus",
-    location: "Bangalore, Karnataka",
+    location: "Namakkal, Tamil Nadu",
     description:
       "OHAA Waldorf School, founded by Mrs. Bharathi Parrivallal, is a pioneering sustainable educational campus in Namakkal. Spread across 18,000 sqft with a project value of ₹3.75 crore, the campus includes 8 classrooms, a music room, sensory play areas, sports facilities, and administrative spaces. Designed around the five natural elements, the school provides a nurturing environment that encourages creativity, holistic learning, and a deeper connection with nature.\n\nConstructed by Subham Consulting and Construction under the leadership of Managing Director Mr. Cibi Pandiyan, the project incorporates mud blocks, natural stone flooring, Tadelakt plaster, filler slab roofing, recycled wood, rainwater harvesting, and solar energy systems. Completed within 9 months, the campus operates with naturally ventilated classrooms that remain comfortable without air conditioning, demonstrating the practicality and effectiveness of sustainable, eco-friendly construction.",
     images: [

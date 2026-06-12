@@ -99,9 +99,9 @@ const AWARDS = [
 // Each material gets a unique image — swap the src values once dedicated
 // assets are available. Labels and order match the original circular layout.
 const MATERIALS = [
-  { src: clayMaterial, label: "Wood", x: 0, y: -240 },
-  { src: stoneMaterial, label: "Stone", x: 210, y: -120 },
-  { src: mudMaterial, label: "Clay", x: 210, y: 120 },
+  { src: clayMaterial, label: "Bamboo", x: 0, y: -240 },
+  { src: stoneMaterial, label: "Vernacular Structure", x: 210, y: -120 },
+  { src: mudMaterial, label: "Madras Terrace", x: 210, y: 120 },
   { src: earthMaterial, label: "Earth", x: 0, y: 240 },
   { src: woodMaterial, label: "Lime", x: -210, y: 120 },
   { src: Domeandwalt, label: "Dome & Walt", x: -210, y: -120 },
