@@ -7,6 +7,8 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import Projects from './pages/Projects';
+import Document from './pages/Document';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -17,10 +19,10 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
           <Route path="projects" element={<Projects />} />
+          <Route path="document" element={<Document />} />
           <Route path="contact" element={<Contact />} />
           <Route path="careers" element={<Careers />} />
-          {/* Fallback to Home for unknown routes */}
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

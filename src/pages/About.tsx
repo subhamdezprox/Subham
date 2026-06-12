@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
+import PageSEO from "../components/PageSEO";
 
 // About page images — all unique, not shared with Home or Services
-import aboutHero from "../assests/images/shubham-about-hero-sustainable-architecture.jpeg";
-import polaroidBackground from "../assests/images/shubham-about-construction-backdrop.jpeg";
-import polaroidImage1 from "../assests/images/shubham-about-interior-architectural-detail.jpeg";
-import polaroidImage2 from "../assests/images/shubham-about-natural-material-texture.jpeg";
-import founderImage from "../assests/images/shubham-founder-sanchana-subbarayan.jpeg";
-import constructionSite from "../assests/images/shubham-about-construction-site-natural-materials.jpeg";
-import sustainableDetail from "../assests/images/shubham-about-sustainable-architecture-detail.jpeg";
-import naturalMaterialPalette from "../assests/images/shubham-about-natural-material-palette.jpeg";
-import sustainableConstructionProject from "../assests/images/shubham-about-sustainable-construction-view.jpeg";
-import fieldConstruction from "../assests/images/shubham-about-field-construction-progress.jpeg";
-import fieldCraftsmanship from "../assests/images/shubham-about-field-craftsmanship-detail.jpeg";
+import aboutHero from "../assests/images/subham-about-hero-sustainable-architecture.jpeg";
+import polaroidBackground from "../assests/images/subham-about-construction-backdrop.jpeg";
+import polaroidImage1 from "../assests/images/subham-about-interior-architectural-detail.jpeg";
+import polaroidImage2 from "../assests/images/subham-about-natural-material-texture.jpeg";
+import founderImage from "../assests/Subham-founder.png";
+import constructionSite from "../assests/images/subham-about-construction-site-natural-materials.jpeg";
+import sustainableDetail from "../assests/images/subham-about-sustainable-architecture-detail.jpeg";
+import naturalMaterialPalette from "../assests/Subham-founder.png";
+import sustainableConstructionProject from "../assests/images/subham-about-field-construction-progress.jpeg";
+import fieldConstruction from "../assests/images/subham-about-field-construction-progress.jpeg";
+import fieldCraftsmanship from "../assests/images/subham-about-field-craftsmanship-detail.jpeg";
 
 // Partner logos
 import paariLogo from "../assests/Paari logo jpg.jpg.jpeg";
@@ -264,8 +265,8 @@ export default function About() {
   }, []);
 
   const stats = [
-    { target: 50, suffix: "+", label: "Projects Completed" },
-    { target: 12, suffix: "+", label: "Service Offerings" },
+    { target: 12, suffix: "+", label: "Projects Completed" },
+    { target: 7, suffix: "+", label: "Service Offerings" },
     { target: 100, suffix: "%", label: "Natural Materials" },
   ];
 
@@ -299,8 +300,43 @@ export default function About() {
     },
   ];
 
+  const aboutSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "url": "https://www.subhamconsulting.com/about",
+      "name": "About Subham Consulting | Sustainable Architecture Founders Chennai",
+      "description": "Founded by civil engineer Sanchana Subbarayan, Subham Consulting revives traditional building wisdom with modern sustainable engineering. 50+ projects across India.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.subhamconsulting.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.subhamconsulting.com/about" }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sanchana Subbarayan",
+      "jobTitle": "Founder & Civil Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Subham Consulting & Construction",
+        "url": "https://www.subhamconsulting.com/"
+      },
+      "sameAs": ["https://www.linkedin.com/in/subhamconsulting/"]
+    }
+  ];
+
   return (
     <div className="bg-brand-bg text-brand-dark font-sans">
+      <PageSEO
+        title="About Subham Consulting | Sustainable Architecture Founders Chennai"
+        description="Founded by civil engineer Sanchana Subbarayan, Subham Consulting revives traditional building wisdom with modern sustainable engineering. 50+ projects across India."
+        path="/about"
+        structuredData={aboutSchema}
+      />
       <header className="relative w-full h-screen overflow-hidden">
         <img
           src={aboutHero}
@@ -399,7 +435,7 @@ export default function About() {
               <div className="group relative overflow-hidden rounded-[6px] shadow-[0_16px_40px_rgba(31,31,31,0.08)]">
                 <img
                   src={fieldConstruction}
-                  alt="Shubham construction in progress sustainable site work"
+                  alt="Subham construction in progress sustainable site work"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-[240px] md:h-[320px] object-cover transition-transform duration-700 group-hover:scale-[1.05]"
@@ -415,7 +451,7 @@ export default function About() {
               <div className="group relative overflow-hidden rounded-[6px] shadow-[0_16px_40px_rgba(31,31,31,0.08)]">
                 <img
                   src={fieldCraftsmanship}
-                  alt="Shubham craftsmanship detail natural material sustainable construction"
+                  alt="Subham craftsmanship detail natural material sustainable construction"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-[240px] md:h-[320px] object-cover transition-transform duration-700 group-hover:scale-[1.05]"
@@ -443,9 +479,9 @@ export default function About() {
                 Building for wellness and nature.
               </Reveal>
               {[
-                "Sanchana Subbarayan, Founder of Shubham Consulting and Construction, is a Civil Engineering graduate driven by a vision to create healthier and more sustainable living environments. Her journey began with a simple realization: modern buildings not only impact the environment through resource consumption, but also affect human health through chemical emissions from conventional materials.",
+                "Sanchana Subbarayan, Founder of Subham Consulting and Construction, is a Civil Engineering graduate driven by a vision to create healthier and more sustainable living environments. Her journey began with a simple realization: modern buildings not only impact the environment through resource consumption, but also affect human health through chemical emissions from conventional materials.",
                 "Believing that the spaces we live in should support both human well-being and nature, Sanchana explored how traditional architecture could be merged with modern engineering principles. Her goal was to make sustainable building practices practical, affordable, and relevant for contemporary lifestyles.",
-                "Today, Shubham Consulting and Construction is dedicated to reviving traditional building wisdom through modern and environmentally responsible practices. We create thoughtfully designed spaces using natural materials and climate-conscious design that remain connected to nature and local context.",
+                "Today, Subham Consulting and Construction is dedicated to reviving traditional building wisdom through modern and environmentally responsible practices. We create thoughtfully designed spaces using natural materials and climate-conscious design that remain connected to nature and local context.",
               ].map((p, i) => (
                 <Reveal as="p" key={i} delay={240 + i * 100} className="mb-6">
                   {p}
@@ -463,7 +499,7 @@ export default function About() {
                 <div className="mt-5 pt-5 border-t border-brand-earth/15">
                   <span className="top-title mb-2">Sustainable Vision</span>
                   <p className="m-0">
-                    A visual reflection of Shubham&apos;s approach: grounded materials, soft light, and spaces that stay connected to nature.
+                    A visual reflection of Subham&apos;s approach: grounded materials, soft light, and spaces that stay connected to nature.
                   </p>
                 </div>
               </div>
@@ -491,21 +527,16 @@ export default function About() {
               <ZoomImage
                 src={sustainableConstructionProject}
                 alt="Sustainable construction project"
-                height={300}
+                height={600}
                 className="mb-6"
               />
               <h3 className="font-serif text-[24px] text-brand-earth leading-[1.3] font-normal m-0">
                 Commitment to Lasting Value.
               </h3>
               <p className="mt-3">
-                Shubham is a sustainable consulting and construction company working across India. Our expertise includes farmhouses, residences, institutional spaces, schools, and eco-development projects. We balance functionality, long-term value, and environmental responsibility in every site we develop.
+                Subham is a sustainable consulting and construction company working across India. Our expertise includes farmhouses, residences, institutional spaces, schools, and eco-development projects. We balance functionality, long-term value, and environmental responsibility in every site we develop.
               </p>
-              <div className="mt-8 pt-8 border-t border-brand-earth/10">
-                <span className="top-title mb-2">Future Horizons</span>
-                <p className="m-0 italic">
-                  Looking ahead, Shubham is preparing to bring its sustainable engineering expertise to public infrastructure and government projects, aiming to create climate-responsive civic spaces for the next generation.
-                </p>
-              </div>
+
             </Reveal>
 
             <div className="mt-0 md:mt-20">
@@ -545,7 +576,15 @@ export default function About() {
                   </p>
                 </Reveal>
               ))}
+
+              <div className="mt-8 pt-8 border-t border-brand-earth/10">
+                <span className="top-title mb-2">Future Horizons</span>
+                <p className="m-0 italic">
+                  Looking ahead, Subham is preparing to bring its sustainable engineering expertise to public infrastructure and government projects, aiming to create climate-responsive civic spaces for the next generation.
+                </p>
+              </div>
             </div>
+
           </div>
         </section>
 
@@ -610,7 +649,7 @@ export default function About() {
                           className="inline-flex items-center gap-2 text-brand-earth/60 hover:text-brand-earth transition-colors duration-300 font-sans text-[11px] uppercase tracking-[0.14em]"
                         >
                           <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                           </svg>
                           Connect on LinkedIn
                         </a>
@@ -634,7 +673,7 @@ export default function About() {
                 className="flex items-center gap-2.5 text-brand-earth/70 hover:text-brand-earth transition-colors duration-300 font-sans text-[11px] uppercase tracking-[0.14em] border border-brand-earth/20 hover:border-brand-earth px-5 py-2.5 rounded-full"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                 </svg>
                 LinkedIn
               </a>
@@ -645,7 +684,7 @@ export default function About() {
                 className="flex items-center gap-2.5 text-brand-earth/70 hover:text-brand-earth transition-colors duration-300 font-sans text-[11px] uppercase tracking-[0.14em] border border-brand-earth/20 hover:border-brand-earth px-5 py-2.5 rounded-full"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
                 </svg>
                 Instagram
               </a>

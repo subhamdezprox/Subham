@@ -1,39 +1,81 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { submitToWeb3Forms, validateEmail } from '../utils/web3forms';
+import PageSEO from '../components/PageSEO';
 
-import contactHero       from '../assests/contact/shubham-contact-studio-interior-hero.png';
-import instagramImg      from '../assests/contact/shubham-contact-instagram-social-media.png';
-import linkedinImg       from '../assests/contact/shubham-careers-team-working-hero.png';
-import projectInquiryImg from '../assests/contact/shubham-contact-project-inquiry-documents.png';
+import contactHero       from '../assests/contact/subham-contact-studio-interior-hero.png';
+import instagramImg      from '../assests/contact/subham-contact-instagram-social-media.png';
+import linkedinImg       from '../assests/contact/subham-careers-team-working-hero.png';
+import projectInquiryImg from '../assests/contact/subham-contact-project-inquiry-documents.png';
+
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+    </svg>
+  );
+}
 
 const contacts = [
   { label: 'Visit', detail: 'No:3 Sri Griha House, 8th Avenue\nAshok Nagar, Chennai - 600083' },
   { label: 'Write', detail: 'Consultingsubham@gmail.com\nCareers.consultingsubham@gmail.com' },
   { label: 'Call', detail: '+91 84385 30234 (WhatsApp)\nMon–Fri · 10:00 AM – 4:00 PM' },
+  {
+    label: 'Social Links',
+    detail: (
+      <span className="inline-flex items-center justify-end gap-4">
+        <a
+          href="https://www.instagram.com/subhamconsulting/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Subham Consulting on Instagram"
+          className="text-brand-earth/70 hover:text-brand-earth transition-colors duration-200"
+        >
+          <InstagramIcon className="w-[40px] h-[40px]" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/subhamconsulting/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Subham Consulting on LinkedIn"
+          className="text-brand-earth/70 hover:text-brand-earth transition-colors duration-200"
+        >
+          <LinkedinIcon className="w-[40px] h-[40px]" />
+        </a>
+      </span>
+    ),
+  },
 ];
 
-const reachOptions = [
-  {
-    title: 'Instagram',
-    desc: 'Follow our journey — real project photos, material studies, and behind-the-scenes sustainable construction in Chennai.',
-    image: instagramImg,
-    alt: 'Subham Consulting Instagram – sustainable construction projects Chennai',
-    link: 'https://www.instagram.com/subhamconsulting/'
-  },
-  {
-    title: 'LinkedIn',
-    desc: 'Connect professionally for consulting inquiries, structural analysis partnerships, and corporate eco-build collaborations.',
-    image: linkedinImg,
-    alt: 'Subham Consulting LinkedIn – sustainable construction experts Chennai',
-    link: 'https://www.linkedin.com/in/subhamconsulting/'
-  },
-  {
-    title: 'Project Inquiry',
-    desc: 'Share your vision for a sustainable space. We respond to every inquiry with a tailored consultation plan.',
-    image: projectInquiryImg,
-    alt: 'Subham Consulting project inquiry – start your sustainable construction project Chennai',
-  },
-];
+// const reachOptions = [
+//   {
+//     title: 'Instagram',
+//     desc: 'Follow our journey — real project photos, material studies, and behind-the-scenes sustainable construction in Chennai.',
+//     image: instagramImg,
+//     alt: 'Subham Consulting Instagram – sustainable construction projects Chennai',
+//     link: 'https://www.instagram.com/subhamconsulting/'
+//   },
+//   {
+//     title: 'LinkedIn',
+//     desc: 'Connect professionally for consulting inquiries, structural analysis partnerships, and corporate eco-build collaborations.',
+//     image: linkedinImg,
+//     alt: 'Subham Consulting LinkedIn – sustainable construction experts Chennai',
+//     link: 'https://www.linkedin.com/in/subhamconsulting/'
+//   },
+//   {
+//     title: 'Project Inquiry',
+//     desc: 'Share your vision for a sustainable space. We respond to every inquiry with a tailored consultation plan.',
+//     image: projectInquiryImg,
+//     alt: 'Subham Consulting project inquiry – start your sustainable construction project Chennai',
+//   },
+// ];
 
 function Reveal({ children, delay = 0, as: Tag = 'div' as any, style = {}, className = '', ...rest }: any) {
   const ref = useRef<any>(null);
@@ -128,7 +170,7 @@ export default function Contact() {
     setStatus('loading');
     const key = process.env.REACT_APP_WEB3FORMS_CONTACT_KEY ?? '';
     const result = await submitToWeb3Forms(key, {
-      subject: `[Contact Inquiry] ${form.name} — Shubham Consulting`,
+      subject: `[Contact Inquiry] ${form.name} — Subham Consulting`,
       from_name: form.name,
       replyto: form.email,
       'Full Name': form.name,
@@ -146,13 +188,54 @@ export default function Contact() {
     }
   };
 
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://www.subhamconsulting.com/contact",
+    "name": "Contact Subham Consulting | Sustainable Construction Chennai",
+    "description": "Contact Subham Consulting at Ashok Nagar, Chennai. Call +91 84385 30234, email Consultingsubham@gmail.com, or visit Mon–Fri 10AM–4PM.",
+    "mainEntity": {
+      "@type": "LocalBusiness",
+      "name": "Subham Consulting & Construction",
+      "telephone": "+918438530234",
+      "email": "Consultingsubham@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No:3 Sri Griha House, 8th Avenue",
+        "addressLocality": "Ashok Nagar",
+        "addressRegion": "Chennai",
+        "postalCode": "600083",
+        "addressCountry": "IN"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "10:00",
+        "closes": "16:00"
+      }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.subhamconsulting.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.subhamconsulting.com/contact" }
+      ]
+    }
+  };
+
   return (
     <div className="bg-brand-bg text-brand-dark font-sans">
+      <PageSEO
+        title="Contact Subham Consulting | Sustainable Construction Chennai"
+        description="Contact Subham Consulting at Ashok Nagar, Chennai. Call +91 84385 30234, email Consultingsubham@gmail.com, or visit Mon–Fri 10AM–4PM."
+        path="/contact"
+        structuredData={contactSchema}
+      />
       {/* HERO */}
       <header className="relative w-full h-screen overflow-hidden">
         <img
           src={contactHero}
-          alt="Shubham studio interior sustainable architecture contact page"
+          alt="Subham studio interior sustainable architecture contact page"
           loading="eager"
           decoding="sync"
           fetchPriority="high"
@@ -217,9 +300,9 @@ export default function Contact() {
             </div>
 
             {/* FORM */}
-            <Reveal delay={200} className="bg-brand-parchment p-8 md:p-14 rounded-[2px]">
+            <Reveal delay={200} className="bg-white p-8 md:p-14 rounded-[2px] border-2 border-brand-earth min-h-[640px] md:min-h-[720px] flex flex-col">
               {status === 'success' ? (
-                <div className="text-center py-10">
+                <div className="flex-1 flex flex-col justify-center text-center py-10">
                   <div className="w-16 h-16 bg-brand-earth/10 text-brand-earth rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
                   </div>
@@ -233,68 +316,74 @@ export default function Contact() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={onSubmit} className="space-y-8" noValidate>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <label className="top-title mb-2">Full Name*</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={form.name}
-                        onChange={onChange('name')}
-                        className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors ${errors.name ? 'border-red-400' : 'border-brand-earth/30'}`}
-                        placeholder="John Doe"
-                      />
-                      {errors.name && <span className="text-[11px] text-red-500 mt-1 block">{errors.name}</span>}
+                <form onSubmit={onSubmit} className="flex-1 flex flex-col gap-10" noValidate>
+                  <div className="grid gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div>
+                        <label className="top-title mb-2 text-[13px] md:text-[14px]">Full Name*</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={form.name}
+                          onChange={onChange('name')}
+                          className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors ${errors.name ? 'border-red-400' : 'border-brand-earth/30'}`}
+                          placeholder="John Doe"
+                        />
+                        {errors.name && <span className="text-[11px] text-red-500 mt-1 block">{errors.name}</span>}
+                      </div>
+                      <div>
+                        <label className="top-title mb-2 text-[13px] md:text-[14px]">Email Address*</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={form.email}
+                          onChange={onChange('email')}
+                          className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors ${errors.email ? 'border-red-400' : 'border-brand-earth/30'}`}
+                          placeholder="john@example.com"
+                        />
+                        {errors.email && <span className="text-[11px] text-red-500 mt-1 block">{errors.email}</span>}
+                      </div>
                     </div>
+
                     <div>
-                      <label className="top-title mb-2">Email Address*</label>
+                      <label className="top-title mb-2 text-[13px] md:text-[14px]">Phone Number</label>
                       <input
-                        type="email"
-                        name="email"
-                        value={form.email}
-                        onChange={onChange('email')}
-                        className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors ${errors.email ? 'border-red-400' : 'border-brand-earth/30'}`}
-                        placeholder="john@example.com"
+                        type="tel"
+                        name="phone"
+                        value={form.phone}
+                        onChange={onChange('phone')}
+                        className="w-full bg-transparent border-b border-brand-earth/30 py-2 focus:border-brand-earth outline-none transition-colors"
+                        placeholder="+91 98765 43210"
                       />
-                      {errors.email && <span className="text-[11px] text-red-500 mt-1 block">{errors.email}</span>}
+                    </div>
+
+                    <div className="flex flex-col flex-1">
+                      <label className="top-title mb-2 text-[13px] md:text-[14px]">Message*</label>
+                      <textarea
+                        name="message"
+                        value={form.message}
+                        onChange={onChange('message')}
+                        className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors resize-none flex-1 min-h-[160px] md:min-h-[220px] ${errors.message ? 'border-red-400' : 'border-brand-earth/30'}`}
+                        placeholder="Tell us about your project..."
+                      />
+                      {errors.message && <span className="text-[11px] text-red-500 mt-1 block">{errors.message}</span>}
                     </div>
                   </div>
-                  <div>
-                    <label className="top-title mb-2">Phone Number</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={form.phone}
-                      onChange={onChange('phone')}
-                      className="w-full bg-transparent border-b border-brand-earth/30 py-2 focus:border-brand-earth outline-none transition-colors"
-                      placeholder="+91 98765 43210"
-                    />
+
+                  <div className="mt-auto space-y-4">
+                    {status === 'error' && (
+                      <p className="text-[12px] text-red-500 bg-red-50 px-4 py-3 rounded-[2px]">{errorMsg}</p>
+                    )}
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className={`w-full bg-brand-earth text-white font-sans text-[12px] uppercase tracking-[0.2em] py-5 rounded-[2px] transition-colors duration-300 flex items-center justify-center gap-3 ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-brand-earth-light'}`}
+                    >
+                      {status === 'loading' ? (
+                        <><svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>Sending…</>
+                      ) : 'Send Message'}
+                    </button>
                   </div>
-                  <div>
-                    <label className="top-title mb-2">Message*</label>
-                    <textarea
-                      name="message"
-                      value={form.message}
-                      onChange={onChange('message')}
-                      rows={4}
-                      className={`w-full bg-transparent border-b py-2 focus:border-brand-earth outline-none transition-colors resize-none ${errors.message ? 'border-red-400' : 'border-brand-earth/30'}`}
-                      placeholder="Tell us about your project..."
-                    />
-                    {errors.message && <span className="text-[11px] text-red-500 mt-1 block">{errors.message}</span>}
-                  </div>
-                  {status === 'error' && (
-                    <p className="text-[12px] text-red-500 bg-red-50 px-4 py-3 rounded-[2px]">{errorMsg}</p>
-                  )}
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className={`w-full bg-brand-earth text-white font-sans text-[12px] uppercase tracking-[0.2em] py-5 rounded-[2px] transition-colors duration-300 flex items-center justify-center gap-3 ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : 'hover:bg-brand-earth-light'}`}
-                  >
-                    {status === 'loading' ? (
-                      <><svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>Sending…</>
-                    ) : 'Send Message'}
-                  </button>
                 </form>
               )}
             </Reveal>
@@ -310,7 +399,7 @@ export default function Contact() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 hidden">
             {reachOptions.map((opt, i) => (
               <Reveal key={opt.title} delay={i * 120}>
                 <a 
@@ -330,7 +419,7 @@ export default function Contact() {
                 </a>
               </Reveal>
             ))}
-          </div>
+          </div> */}
         </section>
 
         {/* MAP — LIVE EMBED */}
@@ -347,14 +436,14 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Shubham Consulting and Construction — Ashok Nagar, Chennai"
+                title="Subham Consulting and Construction — Ashok Nagar, Chennai"
               />
 
               {/* Floating address card */}
-              <div className="absolute top-5 left-5 md:top-32 md:left-2 bg-white/96 backdrop-blur-sm rounded-[6px] shadow-[0_16px_48px_rgba(31,31,31,0.18)] p-5 md:p-7 max-w-[260px] md:max-w-[300px]">
+              <div className=" hidden md:block  absolute top-5 left-5 md:top-32 md:left-2 bg-white/96 backdrop-blur-sm rounded-[6px] shadow-[0_16px_48px_rgba(31,31,31,0.18)] p-5 md:p-7 max-w-[260px] md:max-w-[300px]">
                 <span className="top-title mb-3">Our Studio</span>
                 <h3 className="font-serif text-[20px] md:text-[24px] text-brand-earth font-normal leading-tight mt-1 mb-3">
-                  Shubham Consulting<br />& Construction
+                  Subham Consulting<br />& Construction
                 </h3>
                 <p className="text-[13px] text-brand-text leading-[1.7] m-0">
                   No:3 Sri Griha House, 8th Avenue<br />

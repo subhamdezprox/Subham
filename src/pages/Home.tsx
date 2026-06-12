@@ -1,55 +1,69 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import PageSEO from "../components/PageSEO";
 import awards1 from "../assests/awards/awards1.jpeg";
 import awards2 from "../assests/awards/awards2.jpeg";
 
 // Home page images
-import heroSlide1 from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
-import heroSlide2 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
-import heroSlide3 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
-import futureResidence from "../assests/images/shubham-project-exterior-view-01.jpeg";
-import solarEnergy from "../assests/images/shubham-natural-material-detail-01.jpeg";
-import rainwaterHarvesting from "../assests/images/shubham-natural-material-detail-02.jpeg";
-import passiveCooling from "../assests/images/shubham-craftsmanship-detail-01.jpeg";
-import biogasBioseptic from "../assests/images/shubham-sustainable-finish-detail-01.jpeg";
-import clayMaterial from "../assests/images/shubham-construction-progress-01.jpeg";
-import stoneMaterial from "../assests/images/shubham-site-construction-work-01.jpeg";
-import mudMaterial from "../assests/images/shubham-project-exterior-view-01.jpeg";
-import earthMaterial from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
-import woodMaterial from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
-import limeMaterial from "../assests/images/shubham-delhi-residential-construction.jpeg";
-import projectLandscape from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
-import constructionProject from "../assests/images/shubham-golden-hour-project-exterior.jpeg";
+import heroSlide1 from "../assests/images/subham-golden-hour-project-exterior.jpeg";
+import heroSlide2 from "../assests/images/subham-sustainable-residence-project-01.jpeg";
+import heroSlide3 from "../assests/images/subham-sustainable-residence-project-02.jpeg";
+import futureResidence from "../assests/images/subham-project-exterior-view-01.jpeg";
+import solarEnergy from "../assests/solarEnergy.png";
+import rainwaterHarvesting from "../assests/rainwaterHarvesting.png";
+import passiveCooling from "../assests/passiveCooling.png";
+import biogasBioseptic from "../assests/biogasBioseptic.png";
+import clayMaterial from "../assests/images/subham-construction-progress-01.jpeg";
+import stoneMaterial from "../assests/images/subham-site-construction-work-01.jpeg";
+import mudMaterial from "../assests/images/subham-about-natural-material-palette.jpeg";
+import earthMaterial from "../assests/images/subham-sustainable-residence-project-02.jpeg";
+import woodMaterial from "../assests/lime.png";
+import Domeandwalt from "../assests/images/subham-about-interior-architectural-detail.jpeg";
+import projectLandscape from "../assests/images/subham-golden-hour-project-exterior.jpeg";
+import constructionProject from "../assests/images/subham-golden-hour-project-exterior.jpeg";
 
 // Client work images
-import clientProject1 from "../assests/images/shubham-sustainable-residence-project-01.jpeg";
-import clientProject2 from "../assests/images/shubham-sustainable-residence-project-02.jpeg";
-import clientProject3 from "../assests/images/shubham-ohaa-institutional-school-project.jpeg";
+import clientProject1 from "../assests/images/subham-founder-sanchana-subbarayan.jpeg";
+import clientProject2 from "../assests/images/subham-project-exterior-view-01.jpeg";
+import clientProject3 from "../assests/images/subham-ohaa-institutional-school-project.jpeg";
 
 const SLIDES = [heroSlide1, heroSlide2, heroSlide3];
 
 const TESTIMONIALS = [
   {
     quote:
-      "Shubham transformed our vision into a stunning sustainable farmhouse. The natural materials and passive cooling design keep our home comfortable year-round while significantly reducing energy costs.",
+      "We approached Subham Consulting with a dream to build a sustainable farmhouse that connects us with nature. From the initial design phase to the final handover, their team demonstrated exceptional professionalism and expertise. They used rammed earth walls and natural materials that create a perfect balance between traditional aesthetics and modern comfort. The passive cooling design keeps our home cool during hot Chennai summers without relying heavily on air conditioning, while the integrated solar power system takes care of most of our energy needs. Their project management was outstanding, completing the work within the agreed timeline and budget.",
     client: "Rajesh Kumar",
     affiliation: "Farmhouse Owner, Chennai",
     accent: "Sustainable Living",
   },
+  // {
+  //   quote:
+  //     "The attention to detail and commitment to eco-friendly construction was exceptional. Our residence feels healthier and more connected to nature than any home we've lived in before.",
+  //   client: "Priya Venkatesh",
+  //   affiliation: "Residence Owner, Coimbatore",
+  //   accent: "Quality Craftsmanship",
+  // },
+  // {
+  //   quote:
+  //     "From design to execution, Subham delivered beyond expectations. Their expertise in traditional building methods combined with modern engineering created a truly unique and sustainable space.",
+  //   client: "Anand Sharma",
+  //   affiliation: "Institutional Project, Bangalore",
+  //   accent: "Client Satisfaction",
+  // },
   {
     quote:
-      "The attention to detail and commitment to eco-friendly construction was exceptional. Our residence feels healthier and more connected to nature than any home we've lived in before.",
-    client: "Priya Venkatesh",
-    affiliation: "Residence Owner, Coimbatore",
-    accent: "Quality Craftsmanship",
+      "We approached Shubham Consulting for the execution of our vernacular building project in Uttarakhand, and we are extremely satisfied with their work. The team demonstrated a high level of professionalism in executing traditional vernacular construction techniques while maintaining quality standards throughout the project. Their project management was well-organized, and they successfully completed the project within the agreed timeline and budget. The entire process was smooth, transparent, and efficiently handled. Today, we are happily enjoying our beautiful vernacular home in Uttarakhand, and we highly appreciate the dedication and expertise of the Shubham Consulting team.",
+    client: "Bhavya Pandey",
+    affiliation: "Vernacular Home Owner, Uttarakhand",
+    accent: "Traditional Expertise",
   },
   {
     quote:
-      "From design to execution, Shubham delivered beyond expectations. Their expertise in traditional building methods combined with modern engineering created a truly unique and sustainable space.",
-    client: "Anand Sharma",
-    affiliation: "Institutional Project, Bangalore",
-    accent: "Client Satisfaction",
+      "It was a wonderful experience working with the Shubham Consulting team. We initially had a question about whether this sustainable concept could be successfully implemented in Delhi, and their expertise gave us the answer. From planning to execution, the team handled the project professionally and delivered exactly what we envisioned. We are extremely happy with their service, commitment, and support throughout the project. We truly appreciate their efforts and look forward to collaborating with them on future projects as well.",
+    client: "Arun Pandey",
+    affiliation: "Residence Owner, Delhi",
+    accent: "Delhi Implementation",
   },
 ];
 
@@ -85,29 +99,29 @@ const AWARDS = [
 // Each material gets a unique image — swap the src values once dedicated
 // assets are available. Labels and order match the original circular layout.
 const MATERIALS = [
-  { src: clayMaterial,  label: "Clay",  x: 0,    y: -240 },
-  { src: stoneMaterial, label: "Stone", x: 210,  y: -120 },
-  { src: mudMaterial,   label: "Mud",   x: 210,  y: 120  },
-  { src: earthMaterial, label: "Earth", x: 0,    y: 240  },
-  { src: woodMaterial,  label: "Wood",  x: -210, y: 120  },
-  { src: limeMaterial,  label: "Lime",  x: -210, y: -120 },
+  { src: clayMaterial, label: "Wood", x: 0, y: -240 },
+  { src: stoneMaterial, label: "Stone", x: 210, y: -120 },
+  { src: mudMaterial, label: "Clay", x: 210, y: 120 },
+  { src: earthMaterial, label: "Earth", x: 0, y: 240 },
+  { src: woodMaterial, label: "Lime", x: -210, y: 120 },
+  { src: Domeandwalt, label: "Dome & Walt", x: -210, y: -120 },
 ];
 
 export default function Home() {
-  const [loaded, setLoaded]       = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [showHl1, setShowHl1]     = useState(false);
-  const [showHl2, setShowHl2]     = useState(false);
+  const [showHl1, setShowHl1] = useState(false);
+  const [showHl2, setShowHl2] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
-  const bleedRef  = useRef<HTMLImageElement>(null);
-  const quoteRef  = useRef<HTMLImageElement>(null);
-  const bleedSec  = useRef<HTMLElement>(null);
-  const quoteSec  = useRef<HTMLElement>(null);
+  const bleedRef = useRef<HTMLImageElement>(null);
+  const quoteRef = useRef<HTMLImageElement>(null);
+  const bleedSec = useRef<HTMLElement>(null);
+  const quoteSec = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const t0 = setTimeout(() => setLoaded(true),    0);
-    const t1 = setTimeout(() => setShowHl1(true),  300);
-    const t2 = setTimeout(() => setShowHl2(true),  520);
+    const t0 = setTimeout(() => setLoaded(true), 0);
+    const t1 = setTimeout(() => setShowHl1(true), 300);
+    const t2 = setTimeout(() => setShowHl2(true), 520);
     const t3 = setTimeout(() => setShowScroll(true), 900);
     return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
@@ -141,12 +155,12 @@ export default function Home() {
       ticking = true;
       requestAnimationFrame(() => {
         if (bleedRef.current && bleedSec.current) {
-          const r   = bleedSec.current.getBoundingClientRect();
+          const r = bleedSec.current.getBoundingClientRect();
           const off = (window.innerHeight - r.top) * 0.12;
           bleedRef.current.style.transform = `translateY(${off * 0.25}px)`;
         }
         if (quoteRef.current && quoteSec.current) {
-          const r   = quoteSec.current.getBoundingClientRect();
+          const r = quoteSec.current.getBoundingClientRect();
           const off = (window.innerHeight - r.top) * 0.15;
           quoteRef.current.style.transform = `translateY(${off * 0.3}px)`;
         }
@@ -157,8 +171,31 @@ export default function Home() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.subhamconsulting.com/#webpage",
+    "url": "https://www.subhamconsulting.com/",
+    "name": "Subham Consulting | Sustainable Construction Chennai | Eco-Friendly Builders",
+    "description": "Subham Consulting builds eco-friendly homes & green buildings in Chennai using rammed earth, clay & natural materials. Sustainable construction experts in Tamil Nadu.",
+    "isPartOf": { "@id": "https://www.subhamconsulting.com/#website" },
+    "about": { "@id": "https://www.subhamconsulting.com/#organization" },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.subhamconsulting.com/" }
+      ]
+    }
+  };
+
   return (
     <>
+      <PageSEO
+        title="Subham Consulting | Sustainable Construction Chennai | Eco-Friendly Builders"
+        description="Subham Consulting builds eco-friendly homes & green buildings in Chennai using rammed earth, clay & natural materials. Sustainable construction experts in Tamil Nadu."
+        path="/"
+        structuredData={homeSchema}
+      />
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
       <header className="relative w-full h-screen overflow-hidden">
         {SLIDES.map((src, i) => (
@@ -169,7 +206,7 @@ export default function Home() {
             {/* Hero slides are above the fold — load eagerly */}
             <img
               src={src}
-              alt="Shubham sustainable architecture"
+              alt="Subham sustainable architecture"
               loading="eager"
               decoding="sync"
               className={`w-full h-full object-cover ${i === activeSlide ? "animate-[kenburns_8s_ease-in-out_forwards]" : ""}`}
@@ -179,22 +216,24 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#1F1F1F]/55 via-[#1F1F1F]/30 to-[#1F1F1F]/10" />
 
         <div className="absolute left-[6%] bottom-[18%] z-10 max-w-[calc(100%-48px)] md:max-w-[660px]">
-          <div className="overflow-hidden">
+          {/* Visually hidden H1 for SEO — visible tagline is decorative spans below */}
+          <h1 className="sr-only">Sustainable Construction &amp; Architecture Consultants in Chennai — Subham Consulting</h1>
+          <div className="overflow-hidden" aria-hidden="true">
             <span
               className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${showHl1 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"}`}
             >
               Luxury That
             </span>
           </div>
-          <span className="block w-[60px] h-[1px] bg-white/50 my-[18px]" />
-          <div className="overflow-hidden">
+          <span className="block w-[60px] h-[1px] bg-white/50 my-[18px]" aria-hidden="true" />
+          <div className="overflow-hidden" aria-hidden="true">
             <span
               className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${showHl2 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"}`}
             >
               Breathes
             </span>
           </div>
-          <span className="block w-[60px] h-[1px] bg-white/50 my-[18px] ml-auto" />
+          <span className="block w-[60px] h-[1px] bg-white/50 my-[18px] ml-auto" aria-hidden="true" />
         </div>
 
         {/* Decorative hexagons */}
@@ -237,7 +276,7 @@ export default function Home() {
             Not just a home.<br />A living ecosystem.
           </h2>
           <p className="reveal mt-8 max-w-[680px] mx-auto text-[15px] md:text-base">
-            Shubham Consulting and Construction is redefining luxury through sustainability. We design and build
+            Subham Consulting and Construction is redefining luxury through sustainability. We design and build
             high-end spaces that are fully self-sustainable, eco-conscious, and deeply connected to nature —
             without compromising on elegance. Every space is thoughtfully curated to create harmony between
             architecture, wellness, and the environment.
@@ -250,7 +289,7 @@ export default function Home() {
         <img
           ref={bleedRef}
           src={futureResidence}
-          alt="Atmospheric Shubham project landscape"
+          alt="Atmospheric Subham project landscape"
           loading="lazy"
           decoding="async"
           className="w-full h-full object-cover will-change-transform"
@@ -277,7 +316,7 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[60px] relative z-20">
           <p className="reveal text-[15px] md:text-base">
-            At Shubham, we believe your home should heal you, not harm the planet. Our construction methodology
+            At Subham, we believe your home should heal you, not harm the planet. Our construction methodology
             is built on a foundation of 0% hazardous chemicals, using breathable natural materials that support
             long-term human health. We combine traditional wisdom with modern engineering to create structures
             that are as durable as they are beautiful.
@@ -293,10 +332,10 @@ export default function Home() {
       {/* ─── SUSTAINABILITY FEATURES ──────────────────────────────────────── */}
       <section className="bg-brand-bg px-6 md:px-12 lg:px-20 pb-[80px] md:pb-[100px] grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
         {[
-          { img: solarEnergy,         tag: "Solar",   h: "Solar Energy Systems",   b: "Harnessing the sun to power your modern lifestyle with zero emissions." },
-          { img: rainwaterHarvesting, tag: "Water",   h: "Rainwater Harvesting",   b: "Integrated collection systems designed to secure your water future naturally." },
-          { img: passiveCooling,      tag: "Cooling", h: "Passive Cooling",        b: "Architectural design that maintains comfort without high energy consumption." },
-          { img: biogasBioseptic,     tag: "Waste",   h: "Bio-Gas & Bio-Septic",   b: "Closing the loop with integrated waste management and renewable energy." },
+          { img: solarEnergy, tag: "Solar", h: "Solar Energy Systems", b: "Harnessing the sun to power your modern lifestyle with zero emissions." },
+          { img: rainwaterHarvesting, tag: "Water", h: "Rainwater Harvesting", b: "Integrated collection systems designed to secure your water future naturally." },
+          { img: passiveCooling, tag: "Cooling", h: "Passive Cooling", b: "Architectural design that maintains comfort without high energy consumption." },
+          { img: biogasBioseptic, tag: "Waste", h: "Bio-Gas & Bio-Septic", b: "Closing the loop with integrated waste management and renewable energy." },
         ].map((v) => (
           <article key={v.h} className="group reveal">
             <div className="relative overflow-hidden aspect-[3/4]">
@@ -334,8 +373,8 @@ export default function Home() {
             <div className="reveal space-y-5">
               {[
                 { h: "Rammed Earth & Mud Blocks", b: "Breathable, thermal-efficient walls that provide natural insulation and a unique organic aesthetic." },
-                { h: "Natural COB & Stone",        b: "Utilizing foundation stones and natural COB for structural integrity that honours building heritage." },
-                { h: "Artisanal Finishes",         b: "Lime plasters, traditional textures, and Madras terrace roofing for timeless elegance and health." },
+                { h: "Natural COB & Stone", b: "Utilizing foundation stones and natural COB for structural integrity that honours building heritage." },
+                { h: "Artisanal Finishes", b: "Lime plasters, traditional textures, and Madras terrace roofing for timeless elegance and health." },
               ].map((s) => (
                 <div key={s.h} className="pt-4 border-t border-brand-earth/20">
                   <h3 className="text-[17px] md:text-[19px] text-brand-earth leading-tight mb-1">{s.h}</h3>
@@ -358,7 +397,7 @@ export default function Home() {
                   <div className="aspect-[3/4] w-full overflow-hidden">
                     <img
                       src={mat.src}
-                      alt={`${mat.label} – natural building material – Shubham Consulting`}
+                      alt={`${mat.label} – natural building material – Subham Consulting`}
                       loading="lazy"
                       decoding="async"
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
@@ -378,7 +417,7 @@ export default function Home() {
       </section>
 
       {/* ─── QUOTE BLEED ──────────────────────────────────────────────────── */}
-      <section className="relative w-full h-[240px] sm:h-[280px] md:h-[320px] overflow-hidden bg-white" ref={quoteSec}>
+      <section className="relative w-full h-[240px] sm:h-[280px] md:h-[820px] overflow-hidden bg-white" ref={quoteSec}>
         <img
           // ref={quoteRef}
           src={projectLandscape}
@@ -390,10 +429,11 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#1F1F1F]/15 via-[#1F1F1F]/55 to-[#1F1F1F]/65" />
         <div className="absolute right-[6%] md:right-[8%] top-1/2 -translate-y-1/2 text-right max-w-[90vw] sm:max-w-[480px] md:max-w-[560px] z-10 px-2">
           <span className="font-serif text-[48px] md:text-[80px] text-white/70 leading-none float-left mr-2 pt-6 md:pt-10">"</span>
-          <p className="font-serif italic text-white text-[14px] sm:text-[16px] md:text-[18px]">
+          <p className="font-serif italic text-white text-[14px] sm:text-[16px] md:text-[34px]">
             Build a home that lives with you, not against nature.
           </p>
-          <p className="text-white mt-4 opacity-80 text-[13px] md:text-base">Explore our exceptional services and unparalleled experiences.</p>
+          <br />
+          <p className="text-white mt-4 opacity-80 text-[13px] md:text-[17px]">Explore our exceptional services and unparalleled experiences.</p>
         </div>
       </section>
 
@@ -408,23 +448,22 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-[420px] md:text-right text-[14px] md:text-base">
-              This section is data-driven — verified testimonials can be added, updated, or removed from a single
-              content list without restructuring the page.
+              Explore what our clients say about our expertise in sustainable construction, natural building techniques, and environmentally conscious project delivery.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {TESTIMONIALS.map((item, index) => (
               <article
                 key={`${item.client}-${index}`}
-                className="reveal relative bg-brand-parchment border border-brand-earth/12 rounded-[18px] p-6 md:p-8 shadow-[0_20px_50px_rgba(31,31,31,0.05)] transition-transform duration-500 hover:-translate-y-1"
+                className="reveal relative bg-brand-parchment border border-brand-earth/12 rounded-[18px] p-5 md:p-6 shadow-[0_20px_50px_rgba(31,31,31,0.05)] transition-transform duration-500 hover:-translate-y-1"
               >
-                <span className="top-title mb-4">{item.accent}</span>
-                <p className="font-serif italic text-brand-earth text-[20px] sm:text-[23px] md:text-[27px] leading-[1.55] min-h-[160px] sm:min-h-[180px]">
+                <span className="top-title mb-3">{item.accent}</span>
+                <p className="font-serif italic text-brand-earth text-[16px] sm:text-[18px] md:text-[20px] leading-[1.6]">
                   "{item.quote}"
                 </p>
-                <div className="pt-5 mt-5 border-t border-brand-earth/12">
-                  <h3 className="text-[20px] md:text-[22px] text-brand-earth leading-tight">{item.client}</h3>
-                  <p className="mt-2 text-[13px] md:text-base">{item.affiliation}</p>
+                <div className="pt-4 mt-4 border-t border-brand-earth/12">
+                  <h3 className="text-[18px] md:text-[20px] text-brand-earth leading-tight">{item.client}</h3>
+                  <p className="mt-2 text-[12px] md:text-[13px]">{item.affiliation}</p>
                 </div>
               </article>
             ))}
@@ -438,11 +477,10 @@ export default function Home() {
           <div className="text-center mb-10 md:mb-12 reveal">
             <span className="top-title mb-3">Awards Received</span>
             <h2 className="text-[28px] sm:text-[36px] md:text-[52px] text-brand-earth leading-tight">
-              Recognition Ready To Showcase.
+              Recognized For Sustainable Leadership
             </h2>
             <p className="max-w-[700px] mx-auto mt-4 md:mt-5 text-[14px] md:text-base">
-              The awards module is in place and responsive. Replace the placeholder entries below with confirmed
-              award names, logos, awarding bodies, and receipt years as client-approved assets become available.
+              Celebrating achievements that showcase our leadership in sustainable construction, natural building techniques, innovative design, and exceptional project execution.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
@@ -482,11 +520,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── WHY CHOOSE SHUBHAM ───────────────────────────────────────────── */}
+      {/* ─── WHY CHOOSE SUBHAM ───────────────────────────────────────────── */}
       <section className="bg-brand-parchment px-6 md:px-12 lg:px-20 py-[80px] md:py-[120px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="text-center mb-14 md:mb-20 reveal">
-            <span className="top-title mb-3">Why Choose Shubham?</span>
+            <span className="top-title mb-3">Why Choose Subham?</span>
             <h2 className="text-[28px] sm:text-[36px] md:text-[52px] text-brand-earth mt-3 leading-tight">
               Sustainable Luxury. Uncompromised Quality.
             </h2>
@@ -494,9 +532,9 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {[
               { h: "Lower Maintenance", b: "Built to last with natural materials that age gracefully, reducing long-term upkeep costs." },
-              { h: "Healthier Living",  b: "Zero hazardous chemicals and breathable walls ensure a living space that actively supports your wellness." },
+              { h: "Healthier Living", b: "Zero hazardous chemicals and breathable walls ensure a living space that actively supports your wellness." },
               { h: "Unique Aesthetics", b: "Artisanal finishes and traditional wisdom meet modern design for a home unlike any other." },
-              { h: "Future Ready",      b: "A sustainable investment that appreciates in value while fulfilling your environmental responsibility." },
+              { h: "Future Ready", b: "A sustainable investment that appreciates in value while fulfilling your environmental responsibility." },
             ].map((item, i) => (
               <div key={item.h} className="relative pt-8 md:pt-10 border-t border-brand-earth/15 reveal">
                 <span className="absolute top-3 left-0 top-title text-[10px]">0{i + 1}</span>
@@ -542,7 +580,7 @@ export default function Home() {
                 alt="Sustainable Villa Construction Chennai – Subham Consulting rammed earth passive cooling"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-[380px] lg:h-[520px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                className="w-full h-[380px] lg:h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1F1F1F]/75 via-[#1F1F1F]/20 to-transparent" />
               <div className="absolute top-5 left-5">
@@ -607,7 +645,7 @@ export default function Home() {
         <div className="relative overflow-hidden group order-2 md:order-1">
           <img
             src={constructionProject}
-            alt="Shubham project at golden hour"
+            alt="Subham project at golden hour"
             loading="lazy"
             decoding="async"
             className="w-full h-[240px] sm:h-[300px] md:h-full object-cover transition-transform duration-[800ms] ease-in-out group-hover:scale-[1.04]"
@@ -621,7 +659,7 @@ export default function Home() {
           {[
             { l: "Visit", d: "No:3 Sri Griha House, 8th Avenue\nAshok Nagar, Chennai - 600083" },
             { l: "Write", d: "Consultingsubham@gmail.com\nCareers.consultingsubham@gmail.com" },
-            { l: "Call",  d: "+91 84385 30234 (WhatsApp)\nMon–Fri · 10:00 AM – 4:00 PM" },
+            { l: "Call", d: "+91 84385 30234 (WhatsApp)\nMon–Fri · 10:00 AM – 4:00 PM" },
           ].map((c) => (
             <div
               key={c.l}

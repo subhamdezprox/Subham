@@ -1,46 +1,121 @@
-# Getting Started with Create React App
+# Subham Consulting & Construction — Official Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The official website for **Subham Consulting & Construction**, a sustainable architecture and construction firm based in Chennai, India. Founded by **Sanchana Subbarayan** (Civil Engineer), Subham revives traditional Indian building wisdom through modern, environmentally responsible practices.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## About the Company
 
-### `npm start`
+> "Crafting future-ready spaces that breathe."
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Subham designs and builds high-end, fully self-sustainable spaces using 100% natural materials and climate-conscious construction methods. The firm blends traditional building wisdom — rammed earth, mud blocks, lime plasters, stone masonry — with modern engineering to create homes and institutions that are healthy for occupants and gentle on the planet.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Stats:**
+- 50+ Projects Completed
+- 12+ Service Offerings
+- 100% Natural Materials
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Services
 
-### `npm run build`
+### Core Services
+| Service | Description |
+|---|---|
+| **Sustainable Construction** | Rammed earth walls, passive cooling systems, and breathable natural materials for long-term durability. |
+| **Farmhouse Development** | Thoughtfully designed farmhouses blending modern comfort with natural, landscape-connected living. |
+| **Institutional & School Projects** | Sustainable educational and institutional spaces that enhance comfort, learning, and environmental responsibility. |
+| **Consulting Services** | End-to-end project planning, sustainable design guidance, material selection, construction strategy, and structural consulting. |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Additional Offerings
+| Offering | Description |
+|---|---|
+| **Workshops & Knowledge** | Awareness programs on sustainable living, traditional construction, and alternative building practices. |
+| **Government Projects** | Execution and consulting for public sector projects focused on quality, sustainability, and structural reliability. |
+| **Real Estate & Site Development** | End-to-end solutions from land planning to layout execution for sustainable, future-ready spaces. |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Sustainability Systems
+- **Solar Energy Systems** — Zero-emission solar power for modern lifestyles
+- **Rainwater Harvesting** — Integrated water collection systems
+- **Passive Cooling Design** — Climate-responsive architecture without high energy use
+- **Bio-Gas & Bio-Septic** — Integrated waste management and renewable energy
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Natural Materials Used
+- Rammed Earth & Mud Blocks
+- Natural COB & Stone Masonry
+- Clay Walls
+- Traditional Lime Plasters
+- Vaulted Domes & Madras Terrace Roofing
+- Mangalore Tiles, Bamboo & Thatch
+- Artisanal Textures & Finishes
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Pages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Page | Route | Description |
+|---|---|---|
+| Home | `/` | Hero slideshow, philosophy, sustainability features, materials, testimonials, awards, and featured projects |
+| About | `/about` | Company story, founder profile, team & partners, stats, and milestones |
+| Services | `/services` | Detailed breakdown of all core and additional services plus portfolio |
+| Projects | `/projects` | Portfolio of completed projects |
+| Document | `/document` | Documented field work and sustainable building stories |
+| Contact | `/contact` | Location, email, and phone contact details |
+| Careers | `/careers` | Job opportunities at Subham |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+---
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Team & Partners
 
-## Learn More
+- **Sanchana Subbarayan** — Founder & Civil Engineer
+- **Paari Design Studio** — Collaborating sustainable architecture and design practice
+- **ABA Architects** — Architectural Lead Partner
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Awards
+
+- **Excellence Engineer Award 2024** — சீர்மிகு பொறியாளர் விருது, Chennai 2024
+- **Professional Achievement Award 2024** — Recognizing Engineering Excellence, sponsored by Renacon Biocons
+
+---
+
+## Contact
+
+| | |
+|---|---|
+| **Address** | No:3 Sri Griha House, 8th Avenue, Ashok Nagar, Chennai – 600083 |
+| **Email** | Consultingsubham@gmail.com |
+| **Careers Email** | Careers.consultingsubham@gmail.com |
+| **Phone / WhatsApp** | +91 84385 30234 (Mon–Fri, 10:00 AM – 4:00 PM) |
+| **LinkedIn** | [subhamconsulting](https://www.linkedin.com/in/subhamconsulting/) |
+| **Instagram** | [@subhamconsulting](https://www.instagram.com/subhamconsulting/) |
+
+---
+
+## Tech Stack
+
+- **Framework:** React (TypeScript)
+- **Styling:** Tailwind CSS
+- **Routing:** React Router DOM
+- **Forms:** Web3Forms
+- **UI Components:** shadcn/ui (Radix UI primitives)
+- **Build Tool:** Create React App (CRACO)
+
+## Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
+REACT_APP_WEB3FORMS_CONTACT_KEY=your_web3forms_key_here
+```
+
+## Local Development
+
+```bash
+npm install        # Install dependencies
+npm start          # Run dev server at http://localhost:3000
+npm run build      # Production build
+npm test           # Run tests
+npm run eject      # Eject CRA configuration (one-way)
+```

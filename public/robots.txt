@@ -1,5 +1,4 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-Sitemap: https://subhamconsulting.in/sitemap.xml
+Sitemap: https://www.subhamconsulting.com/sitemap.xml

@@ -1,15 +1,26 @@
 {
-  "short_name": "Shubham",
-  "name": "Shubham Consulting & Construction",
+  "short_name": "Subham",
+  "name": "Subham Consulting & Construction",
+  "description": "Sustainable construction and architecture consultancy in Chennai, Tamil Nadu. Eco-friendly homes, passive cooling design, and green buildings.",
   "icons": [
     {
-      "src": "Subam Logo.png",
-      "sizes": "192x192 512x512",
-      "type": "image/png"
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#B79454",
+  "background_color": "#F7F3EE",
+  "categories": ["business", "construction", "architecture"],
+  "lang": "en-IN",
+  "scope": "/"
 }

@@ -1,20 +1,21 @@
 import React, { useEffect, useRef, useState } from "react";
+import PageSEO from "../components/PageSEO";
 
 // Services page images — all unique, not shared with Home or About
-import servicesHero       from "../assests/images/shubham-services-hero-sustainable-design.jpeg";
-import sustainableConstr  from "../assests/images/shubham-services-sustainable-construction-work.jpeg";
-import farmhouseDev       from "../assests/images/shubham-services-farmhouse-eco-development.jpeg";
-import institutionalProj  from "../assests/images/shubham-services-institutional-school-project.jpeg";
-import consultingService  from "../assests/images/shubham-services-consulting-project-planning.jpeg";
-import workshopKnowledge  from "../assests/images/shubham-services-workshop-sustainable-building.jpeg";
-import governmentInfra    from "../assests/images/shubham-services-hero-sustainable-design.jpeg";
-import realEstateDev      from "../assests/images/shubham-services-sustainable-construction-work.jpeg";
-import stoneBanner        from "../assests/images/shubham-services-farmhouse-eco-development.jpeg";
-import artisanalFinish    from "../assests/images/shubham-services-institutional-school-project.jpeg";
+import servicesHero       from "../assests/images/subham-about-construction-backdrop.jpeg";
+import sustainableConstr  from "../assests/images/subham-services-sustainable-construction-work.jpeg";
+import farmhouseDev       from "../assests/images/subham-about-field-craftsmanship-detail.jpeg";
+import institutionalProj  from "../assests/images/subham-sustainable-finish-detail-01.jpeg";
+import consultingService  from "../assests/images/subham-services-consulting-project-planning.jpeg";
+import workshopKnowledge  from "../assests/images/subham-about-sustainable-construction-view.jpeg";
+import governmentInfra    from "../assests/government.png";
+import realEstateDev      from "../assests/images/subham-services-sustainable-construction-work.jpeg";
+import stoneBanner        from "../assests/images/subham-services-farmhouse-eco-development.jpeg";
+import artisanalFinish    from "../assests/images/subham-about-interior-architectural-detail.jpeg";
 
 // Client work portfolio images
-import portfolioResidence    from "../assests/images/shubham-services-consulting-project-planning.jpeg";
-import portfolioInstitutional from "../assests/images/shubham-services-workshop-sustainable-building.jpeg";
+import portfolioResidence    from "../assests/images/subham-services-consulting-project-planning.jpeg";
+import portfolioInstitutional from "../assests/images/subham-services-workshop-sustainable-building.jpeg";
 
 const services = [
   {
@@ -22,7 +23,7 @@ const services = [
     body:
       "We design and build environmentally responsible spaces using sustainable materials and nature-friendly construction methods that promote long-term durability and healthier living environments. From rammed earth walls to passive cooling systems, we build homes that work with nature, not against it.",
     image: sustainableConstr,
-    alt: "Shubham sustainable construction using natural rammed earth materials",
+    alt: "Subham sustainable construction using natural rammed earth materials",
     imageLeft: false,
   },
   {
@@ -30,7 +31,7 @@ const services = [
     body:
       "Thoughtfully designed farmhouses that blend modern comfort with natural living, creating peaceful and functional spaces connected to the surrounding landscape. We integrate traditional wisdom with modern engineering for breathable, durable living.",
     image: farmhouseDev,
-    alt: "Shubham farmhouse development with natural surroundings and eco-friendly design",
+    alt: "Subham farmhouse development with natural surroundings and eco-friendly design",
     imageLeft: true,
   },
   {
@@ -38,7 +39,7 @@ const services = [
     body:
       "Sustainable and functional educational and institutional spaces designed to enhance comfort, learning, community interaction, and environmental responsibility.",
     image: institutionalProj,
-    alt: "Shubham sustainable institutional school building project",
+    alt: "Subham sustainable institutional school building project",
     imageLeft: false,
   },
   {
@@ -46,7 +47,7 @@ const services = [
     body:
       "End-to-end consulting services covering project planning, sustainable design guidance, material selection, construction strategy, and structural consulting for safe, efficient building systems.",
     image: consultingService,
-    alt: "Shubham construction consulting and sustainable project planning",
+    alt: "Subham construction consulting and sustainable project planning",
     imageLeft: true,
   },
 ];
@@ -56,19 +57,19 @@ const additionalServices = [
     title: "Workshops & Knowledge",
     desc: "Conducting awareness programs focused on sustainable living, traditional construction, and alternative building practices.",
     image: workshopKnowledge,
-    alt: "Shubham sustainable building workshop and knowledge program",
+    alt: "Subham sustainable building workshop and knowledge program",
   },
   {
     title: "Government Projects",
     desc: "Execution and consulting for public sector projects with a focus on quality, sustainability, and structural reliability.",
     image: governmentInfra,
-    alt: "Shubham government infrastructure and public sector project",
+    alt: "Subham government infrastructure and public sector project",
   },
   {
     title: "Real Estate & Site Development",
     desc: "End-to-end solutions focused on creating well-planned, sustainable, and future-ready spaces from land planning to layout execution.",
     image: realEstateDev,
-    alt: "Shubham real estate and sustainable site development planning",
+    alt: "Subham real estate and sustainable site development planning",
   },
 ];
 
@@ -156,13 +157,51 @@ export default function Services() {
   const isMobile = windowWidth <= 768;
   const heroParallax = scrollY * 0.15;
 
+  const servicesSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Sustainable Construction & Architecture Consultancy",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Subham Consulting & Construction",
+      "url": "https://www.subhamconsulting.com/"
+    },
+    "areaServed": { "@type": "State", "name": "Tamil Nadu" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Sustainable Construction Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sustainable Construction", "description": "Eco-friendly construction using rammed earth, passive cooling systems, and natural materials." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Farmhouse Development", "description": "Thoughtfully designed farmhouses blending modern comfort with natural living." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Institutional & School Projects", "description": "Sustainable educational and institutional spaces in Chennai and across India." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construction Consulting Services", "description": "End-to-end project planning, material selection, and structural consulting." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Workshops & Knowledge Programs", "description": "Awareness programs on sustainable living and alternative building practices." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Government Projects", "description": "Public sector construction and consulting focused on sustainability." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Real Estate & Site Development", "description": "End-to-end sustainable site development from land planning to layout execution." } }
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.subhamconsulting.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.subhamconsulting.com/services" }
+      ]
+    }
+  };
+
   return (
     <div className="bg-brand-bg text-brand-dark font-sans">
+      <PageSEO
+        title="Our Services | Sustainable Construction & Eco Architecture Chennai | Subham"
+        description="Sustainable construction, farmhouse development, institutional projects & eco-consulting in Chennai. Natural materials — rammed earth, clay, lime, and stone."
+        path="/services"
+        structuredData={servicesSchema}
+      />
       {/* ====== HERO ====== */}
       <header className="relative w-full h-screen overflow-hidden">
         <img
           src={servicesHero}
-          alt="Shubham sustainable architecture and planning hero"
+          alt="Subham sustainable architecture and planning hero"
           loading="eager"
           decoding="sync"
           fetchPriority="high"
@@ -245,7 +284,7 @@ export default function Services() {
         <section ref={quoteBannerRef} className="relative w-full h-[340px] md:h-[480px] overflow-hidden">
           <img
             src={stoneBanner}
-            alt="Shubham natural stone texture sustainable construction detail"
+            alt="Subham natural stone texture sustainable construction detail"
             loading="lazy"
             decoding="async"
             className="absolute inset-0 w-full h-[120%] lg:top-[-20%] top-[-30%] object-cover will-change-transform"
@@ -286,7 +325,7 @@ export default function Services() {
               <div className="group relative overflow-hidden rounded-[6px] shadow-[0_20px_50px_rgba(31,31,31,0.10)]">
                 <img
                   src={portfolioResidence}
-                  alt="Shubham completed sustainable residence construction project Chennai"
+                  alt="Subham completed sustainable residence construction project Chennai"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-[300px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -303,7 +342,7 @@ export default function Services() {
               <div className="group relative overflow-hidden rounded-[6px] shadow-[0_20px_50px_rgba(31,31,31,0.10)]">
                 <img
                   src={portfolioInstitutional}
-                  alt="Shubham OHAA institutional school project sustainable construction"
+                  alt="Subham OHAA institutional school project sustainable construction"
                   loading="lazy"
                   decoding="async"
                   className="w-full h-[300px] md:h-[420px] object-cover transition-transform duration-700 group-hover:scale-[1.04]"
@@ -336,7 +375,7 @@ export default function Services() {
             </Reveal>
             <Reveal delay={200}>
               <div className="overflow-hidden rounded-[3px]">
-                <img src={artisanalFinish} alt="Shubham artisanal wall finish natural plaster texture" loading="lazy" decoding="async" className="w-full h-[300px] md:h-[440px] object-cover" />
+                <img src={artisanalFinish} alt="Subham artisanal wall finish natural plaster texture" loading="lazy" decoding="async" className="w-full h-[300px] md:h-[440px] object-cover" />
               </div>
             </Reveal>
           </div>
@@ -363,13 +402,13 @@ export default function Services() {
                   onMouseEnter={() => setCardHovered({ ...cardHovered, [i]: true })}
                   onMouseLeave={() => setCardHovered({ ...cardHovered, [i]: false })}
                 >
-                  <div className="overflow-hidden rounded-[2px] aspect-[3/4]">
+                  <div className="overflow-hidden rounded-[2px] aspect-[3/4] bg-brand-parchment">
                     <img
                       src={s.image}
                       alt={s.alt}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover block transition-transform duration-750 ease-in-out group-hover:scale-[1.06]"
+                      className="w-full  h-full object-cover block transition-transform duration-750 ease-in-out group-hover:scale-[1.06]"
                     />
                   </div>
                   <h3 className="font-serif text-[26px] text-brand-earth mt-5 mb-2.5 font-normal leading-tight">

@@ -36,6 +36,7 @@ const navItems = [
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Document', href: '/document' },
   { label: 'Careers', href: '/careers' },
   { label: 'Contact', href: '/contact' },
 ];
@@ -65,7 +66,7 @@ function FooterSubscribe() {
     setStatus('loading');
     const key = process.env.REACT_APP_WEB3FORMS_CONTACT_KEY ?? '';
     const result = await submitToWeb3Forms(key, {
-      subject: '[Newsletter Subscription] New Subscriber — Shubham Consulting',
+      subject: '[Newsletter Subscription] New Subscriber — Subham Consulting',
       from_name: 'Website Footer Signup',
       replyto: email,
       'Subscriber Email': email,
@@ -131,7 +132,7 @@ export default function Layout() {
   }, [location]);
 
   return (
-    <div className="shubham bg-brand-bg min-h-screen flex flex-col relative overflow-hidden">
+    <div className="subham bg-brand-bg min-h-screen flex flex-col relative overflow-hidden">
       <CustomCursor />
       <HexagonBackground />
       {/* NAVBAR */}
@@ -143,9 +144,9 @@ export default function Layout() {
         }`}
       >
         <Link to="/" className="flex items-center">
-          <img 
-            src="/Subam Logo.png" 
-            alt="Shubham Logo" 
+          <img
+            src="/Subam Logo.png"
+            alt="Subham Consulting & Construction — Sustainable Builders Chennai"
             className={`h-12 md:h-14 w-auto object-contain transition-all ${!scrolled ? "brightness-0 invert" : ""}`}
           />
         </Link>
@@ -218,10 +219,10 @@ export default function Layout() {
         </div>
       </div>
 
-      {/* CONTENT */}
-      <main className="flex-1">
+      {/* CONTENT — pages define their own <main> landmark */}
+      <div className="flex-1">
         <Outlet />
-      </main>
+      </div>
 
       {/* FOOTER */}
       <footer className="bg-brand-dark px-10 md:px-20 py-20 pb-12 text-brand-bg/85">
@@ -260,13 +261,13 @@ export default function Layout() {
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/5 pt-7 gap-4 text-center md:text-left">
           <div className="flex flex-col md:flex-row items-center gap-4">
-            <img src="/Subam Logo.png" alt="Shubham" className="h-8 w-auto brightness-0 invert opacity-50" />
+            <img src="/Subam Logo.png" alt="Subham Consulting & Construction" className="h-8 w-auto brightness-0 invert opacity-50" />
             <div className="flex flex-col">
               <span className="text-[12px] text-white/30 font-light">
                 © {new Date().getFullYear()} Subham Consulting & Construction. All rights reserved.
               </span>
-              <span className="text-[10px] text-white/20 font-light mt-1 uppercase tracking-widest">
-                Developed by <a href="https://www.dezprox.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-earth transition-colors">dezprox</a>
+              <span className="text-[10px] text-green-500/80 font-light mt-1 uppercase tracking-widest">
+                Developed by <a href="https://www.dezprox.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-earth text-green-500 transition-colors">dezprox</a>
               </span>
             </div>
           </div>
