@@ -304,7 +304,7 @@ export default function About() {
       "@type": "AboutPage",
       "url": "https://www.subhamconsulting.com/about",
       "name": "About Subham Consulting | Sanchana Subbarayan | Sustainable Architecture Founders Chennai",
-      "description": "Founded by Civil Engineer Sanchana Subbarayan, Subham Consulting is a sustainable architecture firm specialising in rammed earth construction, passive cooling design, eco-friendly homes, and green buildings in Chennai, Tamil Nadu & South India.",
+      "description": "Founded by Civil Engineer Sanchana Subbarayan, Subham Consulting is a sustainable architecture firm specialising in rammed earth construction, passive cooling design, eco-friendly homes, and green buildings in Chennai, Bangalore, Coimbatore, Tamil Nadu & South India.",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
@@ -318,8 +318,8 @@ export default function About() {
       "@type": "Person",
       "@id": "https://www.subhamconsulting.com/about#founder",
       "name": "Sanchana Subbarayan",
-      "alternateName": ["Sanchana Subarayan", "Ms. Sanchana Subbarayan"],
-      "jobTitle": "Founder & Civil Engineer",
+      "alternateName": ["Sanchana Subarayan", "Ms. Sanchana Subbarayan", "Sanchana Subbarayan CEO", "Sanchana Subbarayan Founder"],
+      "jobTitle": "CEO & Founder, Civil Engineer",
       "url": "https://www.subhamconsulting.com/about",
       "image": "https://www.subhamconsulting.com/Subam-founder.png",
       "description": "Sanchana Subbarayan is a Civil Engineer and Founder of Subham Consulting & Construction, specialising in sustainable architecture, rammed earth construction, and eco-friendly homes. She leads sustainable construction projects across Chennai, Tamil Nadu, Delhi, and South India.",
@@ -355,13 +355,6 @@ export default function About() {
       ],
       "sameAs": [
         "https://www.linkedin.com/in/subhamconsulting/"
-      ],
-      "areaServed": [
-        { "@type": "City", "name": "Chennai", "containedInPlace": { "@type": "State", "name": "Tamil Nadu" } },
-        { "@type": "City", "name": "Delhi" },
-        { "@type": "City", "name": "Bangalore" },
-        { "@type": "City", "name": "Uttarakhand" },
-        { "@type": "State", "name": "Tamil Nadu" }
       ]
     }
   ];
@@ -370,7 +363,7 @@ export default function About() {
     <div className="bg-brand-bg text-brand-dark font-sans">
       <PageSEO
         title="About Subham Consulting | Sanchana Subbarayan | Sustainable Architecture Founders Chennai"
-        description="Sanchana Subbarayan – Civil Engineer & Founder of Subham Consulting. Specialises in sustainable architecture, rammed earth construction & eco-friendly homes in Chennai & South India."
+        description="Sanchana Subbarayan – CEO, Founder & Civil Engineer. Sustainable architects in Chennai, Bangalore & Coimbatore. Rammed earth, vernacular design & eco-friendly homes."
         path="/about"
         structuredData={aboutSchema}
       />

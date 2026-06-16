@@ -71,6 +71,12 @@ const additionalServices = [
     image: realEstateDev,
     alt: "Sustainable real estate development and eco-friendly site planning - residential land development",
   },
+  {
+    title: "Project Management Services",
+    desc: "Comprehensive project management and turnkey construction oversight from planning through completion. We handle sustainable construction projects in Chennai, Bangalore, Coimbatore, and across South India.",
+    image: realEstateDev,
+    alt: "Turnkey sustainable construction and project management services - eco-friendly builders",
+  },
 ];
 
 const roofFinishes = [
@@ -193,7 +199,7 @@ export default function Services() {
     <div className="bg-brand-bg text-brand-dark font-sans">
       <PageSEO
         title="Sustainable Construction Services | Subham Consulting Chennai | Rammed Earth Homes"
-        description="Subham Consulting services: sustainable construction, rammed earth homes, passive cooling design, farmhouse development & eco-friendly architecture in Chennai, Tamil Nadu & South India."
+        description="Sustainable construction, rammed earth homes & eco-friendly architecture in Chennai, Bangalore & Coimbatore. Turnkey project management by Subham Consulting."
         path="/services"
         structuredData={servicesSchema}
       />
