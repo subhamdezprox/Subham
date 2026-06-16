@@ -229,8 +229,8 @@ export default function Projects() {
   return (
     <div className="bg-brand-bg text-brand-dark font-sans overflow-hidden">
       <PageSEO
-        title="Projects | Sustainable Construction Portfolio | Subham Consulting Chennai"
-        description="Explore Subham Consulting's portfolio of eco-friendly projects — sustainable villas, OHAA school campus, Delhi residence, and Uttarakhand eco-builds."
+        title="Sustainable Construction Portfolio | Subham Consulting Projects | Rammed Earth Homes"
+        description="Subham Consulting portfolio: sustainable residence projects, OHAA green school, Delhi eco-home & Uttarakhand mountain project. Real sustainable construction by Sanchana Subbarayan."
         path="/projects"
         structuredData={projectsSchema}
       />

@@ -192,8 +192,8 @@ export default function Services() {
   return (
     <div className="bg-brand-bg text-brand-dark font-sans">
       <PageSEO
-        title="Our Services | Sustainable Construction & Eco Architecture Chennai | Subham"
-        description="Sustainable construction, farmhouse development, institutional projects & eco-consulting in Chennai. Natural materials — rammed earth, clay, lime, and stone."
+        title="Sustainable Construction Services | Subham Consulting Chennai | Rammed Earth Homes"
+        description="Subham Consulting services: sustainable construction, rammed earth homes, passive cooling design, farmhouse development & eco-friendly architecture in Chennai, Tamil Nadu & South India."
         path="/services"
         structuredData={servicesSchema}
       />

@@ -226,8 +226,8 @@ export default function Contact() {
   return (
     <div className="bg-brand-bg text-brand-dark font-sans">
       <PageSEO
-        title="Contact Subham Consulting | Sustainable Construction Chennai"
-        description="Contact Subham Consulting at Ashok Nagar, Chennai. Call +91 84385 30234, email Consultingsubham@gmail.com, or visit Mon–Fri 10AM–4PM."
+        title="Contact Subham Consulting | Sustainable Architecture Chennai | Rammed Earth Builders"
+        description="Contact Subham Consulting & Construction in Ashok Nagar, Chennai. Founder Sanchana Subbarayan. Phone +91 84385 30234, email Consultingsubham@gmail.com, Mon–Fri 10AM–4PM."
         path="/contact"
         structuredData={contactSchema}
       />

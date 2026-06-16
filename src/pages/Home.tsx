@@ -133,10 +133,11 @@ export default function Home() {
     "@type": "WebPage",
     "@id": "https://www.subhamconsulting.com/#webpage",
     "url": "https://www.subhamconsulting.com/",
-    "name": "Subham Consulting | Sustainable Construction Chennai | Eco-Friendly Builders",
-    "description": "Subham Consulting builds eco-friendly homes & green buildings in Chennai using rammed earth, clay & natural materials. Sustainable construction experts in Tamil Nadu.",
+    "name": "Subham Consulting | Sustainable Construction Chennai | Sanchana Subbarayan",
+    "description": "Subham Consulting: Sustainable construction & eco-friendly architecture by Sanchana Subbarayan. Rammed earth homes, passive cooling design & green buildings in Chennai & Tamil Nadu.",
     "isPartOf": { "@id": "https://www.subhamconsulting.com/#website" },
     "about": { "@id": "https://www.subhamconsulting.com/#organization" },
+    "mentions": { "@id": "https://www.subhamconsulting.com/about#founder" },
     "breadcrumb": {
       "@type": "BreadcrumbList",
       "itemListElement": [
@@ -148,8 +149,8 @@ export default function Home() {
   return (
     <>
       <PageSEO
-        title="Subham Consulting | Sustainable Construction Chennai | Eco-Friendly Builders"
-        description="Subham Consulting builds eco-friendly homes & green buildings in Chennai using rammed earth, clay & natural materials. Sustainable construction experts in Tamil Nadu."
+        title="Subham Consulting | Sustainable Construction & Eco-Friendly Homes | Chennai"
+        description="Subham Consulting specialises in sustainable construction, rammed earth homes & passive cooling design. Founded by Sanchana Subbarayan. Eco-friendly architecture in Chennai, Tamil Nadu & South India."
         path="/"
         structuredData={homeSchema}
       />

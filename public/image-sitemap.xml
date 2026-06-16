@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-golden-hour-project-exterior.jpeg</image:loc>
+      <image:title>Sustainable architecture exterior golden hour - Subham Consulting</image:title>
+      <image:caption>Golden hour sustainable architecture exterior - eco-friendly passive cooling residential project by Subham Consulting Chennai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/Subam%20Logo.png</image:loc>
+      <image:title>Subham Consulting Logo</image:title>
+      <image:caption>Subham Consulting & Construction - Sustainable Architecture Firm Chennai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-construction-progress-01.jpeg</image:loc>
+      <image:title>Clay material construction - Subham Consulting sustainable project</image:title>
+      <image:caption>Clay material natural building construction progress</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/about</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/Subam-founder.png</image:loc>
+      <image:title>Sanchana Subbarayan - Founder Subham Consulting</image:title>
+      <image:caption>Sanchana Subbarayan – Civil Engineer & Founder of Subham Consulting & Construction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-about-construction-backdrop.jpeg</image:loc>
+      <image:title>Sustainable architecture interior design - Subham project</image:title>
+      <image:caption>Sustainable architecture interior design with natural materials - passive cooling eco-friendly home construction</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-about-interior-architectural-detail.jpeg</image:loc>
+      <image:title>Natural material architectural detail - Subham sustainable project</image:title>
+      <image:caption>Sustainable interior architectural detail - natural materials and passive cooling design</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/services</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-services-consulting-project-planning.jpeg</image:loc>
+      <image:title>Sustainable construction consulting project planning</image:title>
+      <image:caption>Eco-friendly home construction using natural rammed earth materials and passive cooling design - sustainable builders Chennai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-services-workshop-sustainable-building.jpeg</image:loc>
+      <image:title>Sustainable building workshop and knowledge program</image:title>
+      <image:caption>Sustainable building workshop and knowledge program - eco-friendly construction awareness training</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projects Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/projects</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-golden-hour-project-exterior.jpeg</image:loc>
+      <image:title>Sustainable construction projects portfolio exterior</image:title>
+      <image:caption>Sustainable construction projects portfolio – Subham Consulting Chennai</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-ohaa-institutional-school-project.jpeg</image:loc>
+      <image:title>OHAA green school campus - Subham sustainable project</image:title>
+      <image:caption>OHAA green school campus sustainable institutional architecture Namakkal - eco-friendly educational building</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/Delhi/subham-delhi-residence-01.jpeg</image:loc>
+      <image:title>Delhi sustainable residence - Subham eco-home project</image:title>
+      <image:caption>Delhi Najafgarh sustainable farmhouse with mud vault walls and natural materials - eco-friendly residential architecture</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/UttarKhand/subham-uttarkhand-project-01.jpeg</image:loc>
+      <image:title>Uttarakhand mountain residence - Subham sustainable project</image:title>
+      <image:caption>Uttarakhand mountain residence sustainable architecture with natural building materials - Himalayan eco-home</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/contact</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-about-construction-backdrop.jpeg</image:loc>
+      <image:title>Subham Consulting studio interior - contact page</image:title>
+      <image:caption>Subham Consulting studio interior with sustainable architecture and eco-friendly design - Contact us</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Careers Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/careers</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-golden-hour-project-exterior.jpeg</image:loc>
+      <image:title>Subham Consulting careers - sustainable construction professionals</image:title>
+      <image:caption>Subham Consulting careers - sustainable construction and eco-friendly architecture professionals working on projects</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Document Page -->
+  <url>
+    <loc>https://www.subhamconsulting.com/document</loc>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-founder-sanchana-subbarayan.jpeg</image:loc>
+      <image:title>Subham sustainable architecture documentation</image:title>
+      <image:caption>Subham sustainable architecture documentation journey across regions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.subhamconsulting.com/images/subham-about-natural-material-palette.jpeg</image:loc>
+      <image:title>Traditional mud building heritage - Tirunelveli documentation</image:title>
+      <image:caption>Traditional mud building heritage - Tirunelveli sustainable construction documentation</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

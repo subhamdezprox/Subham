@@ -180,7 +180,7 @@ export default function Careers() {
     <div className="bg-brand-bg text-brand-dark font-sans min-h-screen">
       <PageSEO
         title="Careers at Subham Consulting | Sustainable Architecture Jobs Chennai"
-        description="Join Subham Consulting â€” open roles for Junior Architect, Civil Engineer, and Site Supervisor in sustainable construction and eco-architecture across Chennai and India."
+        description="Join Subham Consulting & Construction: architect, civil engineer, site supervisor roles in sustainable construction, rammed earth building & eco-friendly architecture under Sanchana Subbarayan."
         path="/careers"
         structuredData={[careersSchema, ...jobPostings]}
       />

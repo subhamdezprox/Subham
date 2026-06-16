@@ -6,3 +6,4 @@ Disallow: /404
 # Crawl-delay: 1
 
 Sitemap: https://www.subhamconsulting.com/sitemap.xml
+Sitemap: https://www.subhamconsulting.com/image-sitemap.xml

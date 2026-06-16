@@ -111,8 +111,8 @@ export default function Document() {
   return (
     <>
       <PageSEO
-        title="Sustainable Construction Journey | Subham Consulting Documentation"
-        description="Explore our sustainable construction journey across Tirunelveli, Delhi, and Uttarakhand, documenting traditional wisdom and modern sustainable practices."
+        title="Sustainable Construction Documentation | Subham Consulting Journey | Sanchana Subbarayan"
+        description="Subham Consulting sustainable construction documentation journey: Tirunelveli traditional homes, Delhi eco-architecture, Uttarakhand mountain project. Founded by Sanchana Subbarayan."
         path="/document"
         structuredData={documentSchema}
       />
