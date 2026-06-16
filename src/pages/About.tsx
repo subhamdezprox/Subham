@@ -3,7 +3,7 @@ import PageSEO from "../components/PageSEO";
 
 // About page images — all unique, not shared with Home or Services
 import aboutHero from "../assests/images/subham-about-hero-sustainable-architecture.png";
-import polaroidBackground from "../assests/images/subham-about-construction-backdrop.jpeg";
+import polaroidBackground from "../assests/subham-services-construction-backdrop.png";
 import polaroidImage1 from "../assests/images/subham-about-interior-architectural-detail.jpeg";
 import polaroidImage2 from "../assests/images/subham-about-natural-material-texture.jpeg";
 import founderImage from "../assests/Subham-founder.png";
@@ -414,8 +414,8 @@ export default function About() {
                 />
               </Reveal> */}
               <Reveal delay={220} className="flex flex-col items-center justify-center text-center h-full">
-                <span className="font-serif text-[80px] text-brand-earth-light leading-none block mb-3 h-10">“</span>
                 <p className="font-serif italic text-brand-earth text-[24px] md:text-[45px] leading-[1.55] max-w-[740px] m-0">
+                  <span className="font-serif text-[80px] text-brand-earth-light">“</span>
                   Our vision is to redefine the future of construction through sustainable innovation, conscious design, and environmentally responsible building practices.
                 </p>
               </Reveal>
