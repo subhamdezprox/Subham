@@ -282,14 +282,14 @@ export default function Careers() {
                       <div>
                         <label className="top-title mb-3">Phone Number*</label>
                         <div className="flex gap-4">
-                          <select
+                          {/* <select
                             name="countryCode"
                             value={formData.countryCode}
                             onChange={handleChange}
                             className="bg-transparent border-b border-brand-earth/30 py-2 outline-none focus:border-brand-earth transition-colors"
                           >
                             {countryCodes.map(c => <option key={c.code} value={c.code}>{c.code} ({c.name})</option>)}
-                          </select>
+                          </select> */}
                           <input
                             type="tel"
                             name="phone"

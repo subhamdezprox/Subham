@@ -266,8 +266,8 @@ export default function Layout() {
               <span className="text-[12px] text-white/30 font-light">
                 © {new Date().getFullYear()} Subham Consulting & Construction. All rights reserved.
               </span>
-              <span className="text-[10px] text-green-500/80 font-light mt-1 uppercase tracking-widest">
-                Developed by <a href="https://www.dezprox.com" target="_blank" rel="noopener noreferrer" className="hover:text-brand-earth text-green-500 transition-colors">dezprox</a>
+              <span className="text-[12px] text-gray-300 font-light mt-1 uppercase tracking-widest">
+                Developed by <a href="https://www.dezprox.com" target="_blank" rel="noopener noreferrer" className="text-brand-earth hover:text-green-200 transition-colors">dezprox</a>
               </span>
             </div>
           </div>

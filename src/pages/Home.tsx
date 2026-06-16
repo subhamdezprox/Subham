@@ -17,7 +17,7 @@ import mudMaterial from "../assests/images/subham-about-natural-material-palette
 import earthMaterial from "../assests/images/subham-sustainable-residence-project-02.jpeg";
 import woodMaterial from "../assests/lime.png";
 import Domeandwalt from "../assests/images/subham-about-interior-architectural-detail.jpeg";
-import projectLandscape from "../assests/images/subham-golden-hour-project-exterior.jpeg";
+import projectLandscape from "../assests/subham-golden-hour-project-exterior.png";
 import constructionProject from "../assests/images/subham-golden-hour-project-exterior.jpeg";
 
 // Client work images
@@ -212,26 +212,19 @@ export default function Home() {
         />
 
         {/* ── Hero text content */}
-        <div
-          style={{
-            position: "absolute",
-            left: "6%",
-            bottom: "18%",
-            zIndex: 10,
-            maxWidth: "min(calc(100% - 48px), 660px)",
-          }}
-        >
+        <div className="absolute left-[6%] bottom-[18%] z-10 max-w-[950px]">
           <h1 className="sr-only">
             Sustainable Construction &amp; Architecture Consultants in Chennai — Subham Consulting
           </h1>
 
           <div style={{ overflow: "hidden" }} aria-hidden="true">
             <span
-              className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`block font-serif text-[32px] sm:text-[40px] md:text-[52px] lg:text-[64px] font-normal text-white leading-tight transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 showHl1 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"
               }`}
             >
-              Luxury That
+              Sustainable Construction & 
+
             </span>
           </div>
 
@@ -248,11 +241,11 @@ export default function Home() {
 
           <div style={{ overflow: "hidden" }} aria-hidden="true">
             <span
-              className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+              className={`block font-serif text-[32px] sm:text-[40px] md:text-[52px] lg:text-[64px] font-normal text-white leading-tight transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                 showHl2 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"
               }`}
             >
-              Breathes
+              Architecture Consultants
             </span>
           </div>
 
@@ -491,11 +484,11 @@ export default function Home() {
               Explore what our clients say about our expertise in sustainable construction, natural building techniques, and environmentally conscious project delivery.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
+          <div className="  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             {TESTIMONIALS.map((item, index) => (
               <article
                 key={`${item.client}-${index}`}
-                className="reveal relative bg-brand-parchment border border-brand-earth/12 rounded-[18px] p-5 md:p-6 shadow-[0_20px_50px_rgba(31,31,31,0.05)] transition-transform duration-500 hover:-translate-y-1"
+                className="reveal relative bg-white border border-brand-earth rounded-[18px] p-5 md:p-6 shadow-[0_20px_50px_rgba(31,31,31,0.05)] transition-transform duration-500 hover:-translate-y-1"
               >
                 <span className="top-title mb-3">{item.accent}</span>
                 <p className="font-serif italic text-brand-earth text-[16px] sm:text-[18px] md:text-[20px] leading-[1.6]">
@@ -527,7 +520,7 @@ export default function Home() {
             {AWARDS.map((award, index) => (
               <article
                 key={`${award.name}-${index}`}
-                className="reveal bg-brand-bg border border-brand-earth/12 rounded-[24px] overflow-hidden shadow-[0_30px_60px_rgba(31,31,31,0.06)] group transition-all duration-500 hover:shadow-[0_40px_80px_rgba(31,31,31,0.1)]"
+                className="reveal bg-white border border-brand-earth rounded-[24px] overflow-hidden shadow-[0_30px_60px_rgba(31,31,31,0.06)] group transition-all duration-500 hover:shadow-[0_40px_80px_rgba(31,31,31,0.1)]"
               >
                 <div className="relative w-full aspect-[4/3] overflow-hidden bg-white/40">
                   {(award as any).image ? (

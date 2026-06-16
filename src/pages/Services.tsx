@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import PageSEO from "../components/PageSEO";
 
 // Services page images — all unique, not shared with Home or About
-import servicesHero       from "../assests/images/subham-about-construction-backdrop.jpeg";
+import servicesHero       from "../assests/subham-services-construction-backdrop.png";
 import sustainableConstr  from "../assests/images/subham-services-sustainable-construction-work.jpeg";
 import farmhouseDev       from "../assests/images/subham-about-field-craftsmanship-detail.jpeg";
 import institutionalProj  from "../assests/images/subham-sustainable-finish-detail-01.jpeg";
@@ -71,12 +71,12 @@ const additionalServices = [
     image: realEstateDev,
     alt: "Sustainable real estate development and eco-friendly site planning - residential land development",
   },
-  {
-    title: "Project Management Services",
-    desc: "Comprehensive project management and turnkey construction oversight from planning through completion. We handle sustainable construction projects in Chennai, Bangalore, Coimbatore, and across South India.",
-    image: realEstateDev,
-    alt: "Turnkey sustainable construction and project management services - eco-friendly builders",
-  },
+  // {
+  //   title: "Project Management Services",
+  //   desc: "Comprehensive project management and turnkey construction oversight from planning through completion. We handle sustainable construction projects in Chennai, Bangalore, Coimbatore, and across South India.",
+  //   image: realEstateDev,
+  //   alt: "Turnkey sustainable construction and project management services - eco-friendly builders",
+  // },
 ];
 
 const roofFinishes = [

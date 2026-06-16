@@ -8,7 +8,7 @@ import clientProject3 from "../assests/images/subham-ohaa-institutional-school-p
 import clientDetail1  from "../assests/images/subham-natural-material-detail-01.jpeg";
 import clientDetail2  from "../assests/images/subham-natural-material-detail-02.jpeg";
 import clientDetail3  from "../assests/images/subham-craftsmanship-detail-01.jpeg";
-import heroImg        from "../assests/images/subham-golden-hour-project-exterior.jpeg";
+import heroImg        from "../assests/subham-golden-hour-project-exterior.png";
 
 // Delhi project images
 import delhiImg1 from "../assests/images/Delhi/subham-delhi-residence-01.jpeg";

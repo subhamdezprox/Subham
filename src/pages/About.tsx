@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import PageSEO from "../components/PageSEO";
 
 // About page images — all unique, not shared with Home or Services
-import aboutHero from "../assests/images/subham-about-hero-sustainable-architecture.jpeg";
+import aboutHero from "../assests/images/subham-about-hero-sustainable-architecture.png";
 import polaroidBackground from "../assests/images/subham-about-construction-backdrop.jpeg";
 import polaroidImage1 from "../assests/images/subham-about-interior-architectural-detail.jpeg";
 import polaroidImage2 from "../assests/images/subham-about-natural-material-texture.jpeg";
@@ -287,15 +287,6 @@ export default function About() {
       isLogo: true,
       linkedin: null,
     },
-    {
-      img: abaLogo,
-      alt: "ABA Architects – Architectural Lead Partner",
-      name: "ABA Architects",
-      role: "Architectural Lead",
-      bio: "ABA Architects specializes in commercial, residential and institutional architecture, delivering innovative design solutions that combine functionality, aesthetics, and efficiency. The firm creates thoughtfully designed spaces that align with client goals while ensuring quality and long term value.",
-      isLogo: true,
-      linkedin: null,
-    },
   ];
 
   const aboutSchema = [
@@ -405,7 +396,7 @@ export default function About() {
         </section>
 
         <section className="bg-brand-bg px-6 md:px-12 lg:px-20 py-10 md:py-15 lg:py-[100px] pt-0">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[60px] items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-[60px] items-center">
             <Reveal>
               <ZoomImage
                 src={constructionSite}
@@ -414,17 +405,17 @@ export default function About() {
               />
             </Reveal>
             <div className="flex flex-col gap-8">
-              <Reveal delay={100}>
+              {/* <Reveal delay={100}>
                 <ZoomImage
                   src={sustainableDetail}
                   alt="Sustainable architecture detail"
                   height={240}
                   wrapperStyle={{ marginTop: isMobile ? 0 : 60 }}
                 />
-              </Reveal>
-              <Reveal delay={220} className="mt-2">
+              </Reveal> */}
+              <Reveal delay={220} className="flex flex-col items-center justify-center text-center h-full">
                 <span className="font-serif text-[80px] text-brand-earth-light leading-none block mb-3 h-10">“</span>
-                <p className="font-serif italic text-brand-earth text-[24px] md:text-[30px] leading-[1.55] max-w-[440px] m-0">
+                <p className="font-serif italic text-brand-earth text-[24px] md:text-[45px] leading-[1.55] max-w-[740px] m-0">
                   Our vision is to redefine the future of construction through sustainable innovation, conscious design, and environmentally responsible building practices.
                 </p>
               </Reveal>
@@ -633,7 +624,7 @@ export default function About() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-10">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 120}>
                 <div className="group bg-white rounded-[20px] shadow-[0_4px_28px_rgba(31,31,31,0.06)] hover:shadow-[0_20px_60px_rgba(31,31,31,0.13)] hover:-translate-y-2 transition-all duration-500 overflow-hidden h-full flex flex-col">
