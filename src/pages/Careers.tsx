@@ -187,7 +187,7 @@ export default function Careers() {
       <header className="relative w-full h-[60vh] overflow-hidden">
         <img
           src={careersHero}
-          alt="Subham Consulting careers â€” sustainable construction professionals at work Chennai"
+          alt="Subham Consulting careers - sustainable construction and eco-friendly architecture professionals working on projects"
           loading="eager"
           decoding="sync"
           fetchPriority="high"

@@ -104,10 +104,10 @@ const projectStories = [
     description:
       "OHAA Waldorf School, founded by Mrs. Bharathi Parrivallal, is a pioneering sustainable educational campus in Namakkal. Spread across 18,000 sqft with a project value of ₹3.75 crore, the campus includes 8 classrooms, a music room, sensory play areas, sports facilities, and administrative spaces. Designed around the five natural elements, the school provides a nurturing environment that encourages creativity, holistic learning, and a deeper connection with nature.\n\nConstructed by Subham Consulting and Construction under the leadership of Managing Director Mr. Cibi Pandiyan, the project incorporates mud blocks, natural stone flooring, Tadelakt plaster, filler slab roofing, recycled wood, rainwater harvesting, and solar energy systems. Completed within 9 months, the campus operates with naturally ventilated classrooms that remain comfortable without air conditioning, demonstrating the practicality and effectiveness of sustainable, eco-friendly construction.",
     images: [
-      { src: clientProject3, alt: "OHAA institutional school project exterior view" },
-      { src: clientDetail1, alt: "Craftsmanship and structural detail at institutional building" },
-      { src: clientProject1, alt: "Natural material detail at OHAA school" },
-      { src: clientProject2, alt: "OHAA school campus with natural finishes" },
+      { src: clientProject3, alt: "OHAA green school campus sustainable institutional architecture Namakkal - eco-friendly educational building" },
+      { src: clientDetail1, alt: "Natural craftsmanship detail mud blocks and Tadelakt plaster - OHAA sustainable school construction" },
+      { src: clientProject1, alt: "Eco-friendly school campus natural stone flooring and sustainable material detail" },
+      { src: clientProject2, alt: "OHAA school campus with natural finishes and passive ventilation system" },
     ],
   },
   {
@@ -117,9 +117,9 @@ const projectStories = [
     description:
       "Located in Najafgarh, Delhi, this sustainable farmhouse project was developed in a green zone village area where climate and material sourcing became major challenges during construction. The client approached us with a vision of creating a farmhouse that feels connected to nature while responding to Delhi’s harsh and unpredictable weather conditions.\n\nDesigned by architect Lalit, the 3,800 sq.ft farmhouse carries a Bali-inspired architectural style blended with traditional village aesthetics. The project features traditional mud vault walls, bamboo elements, natural roofing concepts, and green integration that together create a calm and breathable living environment.\n\nExecuting a sustainable building in Delhi was not easy. From sourcing the right materials to adapting to extreme climate conditions, every stage required exploration and experimentation. But through continuous learning, local adaptation, and proper execution, the project was successfully completed within the planned timeline and budget.\n\nThis project became a strong example that sustainability is not limited by location. With the right mindset, research, and understanding of local materials, sustainable architecture can be created anywhere — even in a highly polluted and climatically challenging city like Delhi.",
     images: [
-      { src: delhiImg1, alt: "Delhi residence sustainable construction – Subham Consulting" },
-      { src: delhiImg2, alt: "Delhi residence interior and material detail" },
-      { src: delhiImg3, alt: "Delhi residence exterior and facade view" },
+      { src: delhiImg1, alt: "Delhi Najafgarh sustainable farmhouse with mud vault walls and natural materials - eco-friendly residential architecture" },
+      { src: delhiImg2, alt: "Delhi residence interior design with bamboo elements and natural breathable finishes" },
+      { src: delhiImg3, alt: "Delhi farmhouse sustainable exterior with green integration and passive cooling design" },
     ],
   },
   {
@@ -129,12 +129,12 @@ const projectStories = [
     description:
       "Nestled in the peaceful landscapes of Uttarakhand, this project was designed with a simple vision — to create a space that feels deeply connected to nature while respecting the beauty and sensitivity of the mountains. Unlike urban construction, building in the hills demands patience, understanding, and a strong connection with the environment around it.\n\nWorking in Uttarakhand came with many challenges. Material transportation through hilly roads, unpredictable climate conditions, and execution in remote areas required constant coordination and adaptability. But these challenges also became part of the learning experience that shaped the project beautifully.\n\nToday, the project stands quietly within the landscape, reflecting simplicity, sustainability, and a deep respect for nature and local craftsmanship.",
     images: [
-      { src: ukImg1, alt: "Uttarkhand sustainable project exterior – Subham Consulting" },
-      { src: ukImg2, alt: "Uttarkhand project construction detail and natural materials" },
-      { src: ukImg3, alt: "Uttarkhand project site and landscape view" },
-      { src: ukImg4, alt: "Uttarkhand project structural and material close-up" },
-      { src: ukImg5, alt: "Uttarkhand project progress and craftsmanship" },
-      { src: ukImg6, alt: "Uttarkhand project finished view and atmosphere" },
+      { src: ukImg1, alt: "Uttarakhand mountain residence sustainable architecture with natural building materials - Himalayan eco-home" },
+      { src: ukImg2, alt: "Uttarakhand mountain project construction detail with traditional natural materials and craftsmanship" },
+      { src: ukImg3, alt: "Uttarakhand sustainable mountain project site landscape and eco-friendly development" },
+      { src: ukImg4, alt: "Uttarakhand project structural detail and natural material close-up - mountain construction" },
+      { src: ukImg5, alt: "Uttarakhand mountain project progress and local artisanal craftsmanship detail" },
+      { src: ukImg6, alt: "Uttarakhand mountain project completed residence with natural atmosphere and landscape integration" },
     ],
   },
 ];

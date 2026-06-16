@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /404
+
+# Crawl delay (optional, uncomment if needed)
+# Crawl-delay: 1
 
 Sitemap: https://www.subhamconsulting.com/sitemap.xml

@@ -169,7 +169,7 @@ export default function Home() {
             where autoplay is blocked. z-index: 0 keeps it behind the video. */}
         <img
           src={heroFallback}
-          alt="Subham sustainable architecture"
+          alt="Golden hour sustainable architecture exterior - eco-friendly passive cooling residential project by Subham Consulting Chennai"
           loading="eager"
           decoding="sync"
           style={{

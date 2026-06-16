@@ -23,7 +23,7 @@ const services = [
     body:
       "We design and build environmentally responsible spaces using sustainable materials and nature-friendly construction methods that promote long-term durability and healthier living environments. From rammed earth walls to passive cooling systems, we build homes that work with nature, not against it.",
     image: sustainableConstr,
-    alt: "Subham sustainable construction using natural rammed earth materials",
+    alt: "Eco-friendly home construction using natural rammed earth materials and passive cooling design - sustainable builders Chennai",
     imageLeft: false,
   },
   {
@@ -31,7 +31,7 @@ const services = [
     body:
       "Thoughtfully designed farmhouses that blend modern comfort with natural living, creating peaceful and functional spaces connected to the surrounding landscape. We integrate traditional wisdom with modern engineering for breathable, durable living.",
     image: farmhouseDev,
-    alt: "Subham farmhouse development with natural surroundings and eco-friendly design",
+    alt: "Sustainable farmhouse development with natural materials and passive cooling - eco-friendly residential architecture",
     imageLeft: true,
   },
   {
@@ -39,7 +39,7 @@ const services = [
     body:
       "Sustainable and functional educational and institutional spaces designed to enhance comfort, learning, community interaction, and environmental responsibility.",
     image: institutionalProj,
-    alt: "Subham sustainable institutional school building project",
+    alt: "Green building institutional school project - sustainable educational architecture with natural materials",
     imageLeft: false,
   },
   {
@@ -47,7 +47,7 @@ const services = [
     body:
       "End-to-end consulting services covering project planning, sustainable design guidance, material selection, construction strategy, and structural consulting for safe, efficient building systems.",
     image: consultingService,
-    alt: "Subham construction consulting and sustainable project planning",
+    alt: "Sustainable construction consulting and eco-friendly project planning service - Subham Consulting",
     imageLeft: true,
   },
 ];
@@ -57,19 +57,19 @@ const additionalServices = [
     title: "Workshops & Knowledge",
     desc: "Conducting awareness programs focused on sustainable living, traditional construction, and alternative building practices.",
     image: workshopKnowledge,
-    alt: "Subham sustainable building workshop and knowledge program",
+    alt: "Sustainable building workshop and knowledge program - eco-friendly construction awareness training",
   },
   {
     title: "Government Projects",
     desc: "Execution and consulting for public sector projects with a focus on quality, sustainability, and structural reliability.",
     image: governmentInfra,
-    alt: "Subham government infrastructure and public sector project",
+    alt: "Government infrastructure and public sector sustainable project - green building construction",
   },
   {
     title: "Real Estate & Site Development",
     desc: "End-to-end solutions focused on creating well-planned, sustainable, and future-ready spaces from land planning to layout execution.",
     image: realEstateDev,
-    alt: "Subham real estate and sustainable site development planning",
+    alt: "Sustainable real estate development and eco-friendly site planning - residential land development",
   },
 ];
 
@@ -375,7 +375,7 @@ export default function Services() {
             </Reveal>
             <Reveal delay={200}>
               <div className="overflow-hidden rounded-[3px]">
-                <img src={artisanalFinish} alt="Subham artisanal wall finish natural plaster texture" loading="lazy" decoding="async" className="w-full h-[300px] md:h-[440px] object-cover" />
+                <img src={artisanalFinish} alt="Artisanal lime plaster finish and natural wall texture - sustainable interior detail" loading="lazy" decoding="async" className="w-full h-[300px] md:h-[440px] object-cover" />
               </div>
             </Reveal>
           </div>

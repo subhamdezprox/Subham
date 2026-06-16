@@ -125,7 +125,7 @@ export default function Document() {
           >
             <img
               src={src}
-              alt="Subham sustainable architecture documentation"
+              alt="Subham sustainable architecture documentation journey across regions"
               loading="eager"
               decoding="sync"
               className={`w-full h-full object-cover ${i === activeSlide ? "animate-[kenburns_8s_ease-in-out_forwards]" : ""}`}
@@ -203,7 +203,7 @@ export default function Document() {
         <img
           ref={bleedRef1}
           src={bleedImage1}
-          alt="Traditional construction techniques"
+          alt="Traditional construction techniques and eco-friendly building methods documentation"
           loading="lazy"
           decoding="async"
           className="w-full h-full object-cover will-change-transform"
@@ -301,7 +301,7 @@ export default function Document() {
               <div className="reveal overflow-hidden rounded-[14px] shadow-[0_20px_50px_rgba(31,31,31,0.08)] group">
                 <img
                   src={heritagePreservation}
-                  alt="Traditional mud building heritage"
+                  alt="Traditional mud building heritage - Tirunelveli sustainable construction documentation"
                   loading="lazy"
                   decoding="async"
                   className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-[1.05]"
@@ -344,7 +344,7 @@ export default function Document() {
         <img
           ref={bleedRef2}
           src={bleedImage2}
-          alt="Delhi sustainable construction"
+          alt="Delhi sustainable construction and eco-friendly architecture documentation"
           loading="lazy"
           decoding="async"
           className="w-full h-full object-cover will-change-transform"
@@ -387,7 +387,7 @@ export default function Document() {
               <div className="reveal overflow-hidden rounded-[14px] shadow-[0_20px_50px_rgba(31,31,31,0.08)]">
                 <img
                   src={delhiImage}
-                  alt="Delhi sustainable farmhouse"
+                  alt="Delhi sustainable farmhouse with natural materials and passive cooling design"
                   loading="lazy"
                   decoding="async"
                   className="w-full aspect-[4/3] object-cover"
@@ -423,7 +423,7 @@ export default function Document() {
               <div className="reveal overflow-hidden rounded-[14px] shadow-[0_20px_50px_rgba(31,31,31,0.08)]">
                 <img
                   src={uttarakhandImage}
-                  alt="Uttarakhand mountain project"
+                  alt="Uttarakhand mountain project - sustainable architecture in Himalayan region"
                   loading="lazy"
                   decoding="async"
                   className="w-full aspect-[4/3] object-cover"
@@ -465,7 +465,7 @@ export default function Document() {
         <div className="relative overflow-hidden group order-2 md:order-1">
           <img
             src={constructionProject}
-            alt="Subham project documentation"
+            alt="Subham sustainable construction documentation - regional archive and learning"
             loading="lazy"
             decoding="async"
             className="w-full h-[240px] sm:h-[300px] md:h-full object-cover transition-transform duration-[800ms] ease-in-out group-hover:scale-[1.04]"

@@ -235,7 +235,7 @@ export default function Contact() {
       <header className="relative w-full h-screen overflow-hidden">
         <img
           src={contactHero}
-          alt="Subham studio interior sustainable architecture contact page"
+          alt="Subham Consulting studio interior with sustainable architecture and eco-friendly design - Contact us"
           loading="eager"
           decoding="sync"
           fetchPriority="high"

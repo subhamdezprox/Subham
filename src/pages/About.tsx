@@ -188,7 +188,7 @@ function PolaroidSection({ parallaxY, isMobile }: any) {
     >
       <img
         src={polaroidBackground}
-        alt="Immersive architectural interior"
+        alt="Sustainable architecture interior design with natural materials - passive cooling eco-friendly home construction"
         loading="lazy"
         decoding="async"
         className="absolute left-0 lg:top-[-60%] top-[-120%] w-full h-[116%] md:h-[122%] object-cover will-change-transform"
@@ -207,7 +207,7 @@ function PolaroidSection({ parallaxY, isMobile }: any) {
         >
           <img
             src={polaroidImage1}
-            alt="Interior architectural detail"
+            alt="Sustainable interior architectural detail - natural materials and passive cooling design"
             loading="lazy"
             decoding="async"
             className="object-cover block"
@@ -219,9 +219,7 @@ function PolaroidSection({ parallaxY, isMobile }: any) {
         >
           <img
             src={polaroidImage2}
-            alt="Natural material texture detail"
-            loading="lazy"
-            decoding="async"
+            alt="Natural building material texture and craftsmanship detail - rammed earth and clay finish"
             className="object-cover block"
             style={imgSize}
           />
