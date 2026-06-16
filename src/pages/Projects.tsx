@@ -84,19 +84,19 @@ const EASE = "cubic-bezier(0.22,1,0.36,1)";
 
 
 const projectStories = [
-  {
-    id: "sustainable-villa-collection",
-    title: "Sustainable Villa Collection",
-    location: "Chennai, Tamil Nadu",
-    year: "Tirunelveli Documentation Series",
-    description:
-      "A journey through the hidden sustainable heritage of Tirunelveli revealed that nearly seventy percent of people in these regions still live in natural buildings — homes that are healthy, climate-responsive, and remarkably strong. We discovered a G+3 mud structure over 150 years old, still housing a large joint family comfortably, standing quietly in the heart of Tirunelveli city. What began as documentation walk became an emotional learning experience — proving that sustainability is not a trend, but knowledge that has existed for generations.",
-    images: [
-      { src: clientDetail3, alt: "Natural material craftsmanship detail in sustainable villa" },
-      { src: clientDetail2, alt: "Construction progress of eco-friendly residential project" },
-      { src: ukImg6, alt: "Exterior atmosphere of sustainable residence project" },
-    ],
-  },
+  // {
+  //   id: "sustainable-villa-collection",
+  //   title: "Sustainable Villa Collection",
+  //   location: "Chennai, Tamil Nadu",
+  //   year: "Tirunelveli Documentation Series",
+  //   description:
+  //     "A journey through the hidden sustainable heritage of Tirunelveli revealed that nearly seventy percent of people in these regions still live in natural buildings — homes that are healthy, climate-responsive, and remarkably strong. We discovered a G+3 mud structure over 150 years old, still housing a large joint family comfortably, standing quietly in the heart of Tirunelveli city. What began as documentation walk became an emotional learning experience — proving that sustainability is not a trend, but knowledge that has existed for generations.",
+  //   images: [
+  //     { src: clientDetail3, alt: "Natural material craftsmanship detail in sustainable villa" },
+  //     { src: clientDetail2, alt: "Construction progress of eco-friendly residential project" },
+  //     { src: ukImg6, alt: "Exterior atmosphere of sustainable residence project" },
+  //   ],
+  // },
   {
     id: "ohaa-green-school-campus",
     title: "OHAA Green School Campus",

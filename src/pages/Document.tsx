@@ -328,10 +328,10 @@ export default function Document() {
             </div>
           </div>
           <div className="mt-12 reveal">
-            <div className="bg-brand-parchment p-6 md:p-8 rounded-[18px] border border-brand-earth/10">
+            <div className="bg-white  p-6 md:p-8 rounded-[18px] border border-brand-earth">
               <p className="text-[14px] md:text-base text-brand-text/80">
                 We sincerely thank <span className="font-semibold text-brand-earth">Thiru. V. Vishnu venugopal IAS</span>, Tirunelveli District Collector,
-                for supporting and encouraging this initiative. We also extend our heartfelt thanks to{' '}
+                for supporting and encouraging this initiative. <br /> We also extend our heartfelt thanks to{' '}
                 <span className="font-semibold text-brand-earth">Kavin Art Gallery Anand Anna</span> for the support, encouragement, and guidance.
               </p>
             </div>
@@ -355,7 +355,7 @@ export default function Document() {
       </section>
 
       {/* ─── DELHI SECTION ───────────────────────────────────────────────── */}
-      <section className="bg-brand-parchment px-6 md:px-12 lg:px-20 py-[80px] md:py-[120px]">
+      {/* <section className="bg-brand-parchment px-6 md:px-12 lg:px-20 py-[80px] md:py-[120px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12 reveal">
             <div>
@@ -405,10 +405,10 @@ export default function Document() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ─── UTTARAKHAND SECTION ─────────────────────────────────────────── */}
-      <section className="bg-brand-bg px-6 md:px-12 lg:px-20 py-[80px] md:py-[120px]">
+      {/* <section className="bg-brand-bg px-6 md:px-12 lg:px-20 py-[80px] md:py-[120px]">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-12 reveal">
             <div>
@@ -458,7 +458,7 @@ export default function Document() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ─── CONTACT ──────────────────────────────────────────────────────── */}
       <section className="grid grid-cols-1 md:grid-cols-2 min-h-[400px] md:min-h-[440px]">

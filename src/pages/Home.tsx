@@ -5,9 +5,7 @@ import awards1 from "../assests/awards/awards1.jpeg";
 import awards2 from "../assests/awards/awards2.jpeg";
 
 // Home page images
-import heroSlide1 from "../assests/images/subham-golden-hour-project-exterior.jpeg";
-import heroSlide2 from "../assests/images/subham-sustainable-residence-project-01.jpeg";
-import heroSlide3 from "../assests/images/subham-sustainable-residence-project-02.jpeg";
+import heroFallback from "../assests/images/subham-golden-hour-project-exterior.jpeg";
 import futureResidence from "../assests/images/subham-project-exterior-view-01.jpeg";
 import solarEnergy from "../assests/solarEnergy.png";
 import rainwaterHarvesting from "../assests/rainwaterHarvesting.png";
@@ -27,7 +25,8 @@ import clientProject1 from "../assests/images/subham-founder-sanchana-subbarayan
 import clientProject2 from "../assests/images/subham-project-exterior-view-01.jpeg";
 import clientProject3 from "../assests/images/subham-ohaa-institutional-school-project.jpeg";
 
-const SLIDES = [heroSlide1, heroSlide2, heroSlide3];
+const HERO_VIDEO_URL =
+  "https://res.cloudinary.com/df03m0m65/video/upload/v1781595812/Subham_Hero_Section_Final_lqvark.mp4";
 
 const TESTIMONIALS = [
   {
@@ -37,20 +36,6 @@ const TESTIMONIALS = [
     affiliation: "Farmhouse Owner, Chennai",
     accent: "Sustainable Living",
   },
-  // {
-  //   quote:
-  //     "The attention to detail and commitment to eco-friendly construction was exceptional. Our residence feels healthier and more connected to nature than any home we've lived in before.",
-  //   client: "Priya Venkatesh",
-  //   affiliation: "Residence Owner, Coimbatore",
-  //   accent: "Quality Craftsmanship",
-  // },
-  // {
-  //   quote:
-  //     "From design to execution, Subham delivered beyond expectations. Their expertise in traditional building methods combined with modern engineering created a truly unique and sustainable space.",
-  //   client: "Anand Sharma",
-  //   affiliation: "Institutional Project, Bangalore",
-  //   accent: "Client Satisfaction",
-  // },
   {
     quote:
       "We approached Shubham Consulting for the execution of our vernacular building project in Uttarakhand, and we are extremely satisfied with their work. The team demonstrated a high level of professionalism in executing traditional vernacular construction techniques while maintaining quality standards throughout the project. Their project management was well-organized, and they successfully completed the project within the agreed timeline and budget. The entire process was smooth, transparent, and efficiently handled. Today, we are happily enjoying our beautiful vernacular home in Uttarakhand, and we highly appreciate the dedication and expertise of the Shubham Consulting team.",
@@ -82,22 +67,8 @@ const AWARDS = [
     mark: "A2",
     image: awards2,
   },
-  // {
-  //   name: "Honour Title",
-  //   body: "Organisation / Council",
-  //   year: "Year",
-  //   mark: "A3",
-  // },
-  // {
-  //   name: "Honour Title",
-  //   body: "Organisation / Council",
-  //   year: "Year",
-  //   mark: "A3",
-  // },
 ];
 
-// Each material gets a unique image — swap the src values once dedicated
-// assets are available. Labels and order match the original circular layout.
 const MATERIALS = [
   { src: clayMaterial, label: "Bamboo", x: 0, y: -240 },
   { src: stoneMaterial, label: "Vernacular Structure", x: 210, y: -120 },
@@ -108,27 +79,18 @@ const MATERIALS = [
 ];
 
 export default function Home() {
-  const [loaded, setLoaded] = useState(false);
-  const [activeSlide, setActiveSlide] = useState(0);
   const [showHl1, setShowHl1] = useState(false);
   const [showHl2, setShowHl2] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
   const bleedRef = useRef<HTMLImageElement>(null);
-  const quoteRef = useRef<HTMLImageElement>(null);
   const bleedSec = useRef<HTMLElement>(null);
   const quoteSec = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const t0 = setTimeout(() => setLoaded(true), 0);
     const t1 = setTimeout(() => setShowHl1(true), 300);
     const t2 = setTimeout(() => setShowHl2(true), 520);
     const t3 = setTimeout(() => setShowScroll(true), 900);
-    return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(() => setActiveSlide((s) => (s + 1) % SLIDES.length), 5500);
-    return () => clearInterval(id);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
   useEffect(() => {
@@ -158,11 +120,6 @@ export default function Home() {
           const r = bleedSec.current.getBoundingClientRect();
           const off = (window.innerHeight - r.top) * 0.12;
           bleedRef.current.style.transform = `translateY(${off * 0.25}px)`;
-        }
-        if (quoteRef.current && quoteSec.current) {
-          const r = quoteSec.current.getBoundingClientRect();
-          const off = (window.innerHeight - r.top) * 0.15;
-          quoteRef.current.style.transform = `translateY(${off * 0.3}px)`;
         }
         ticking = false;
       });
@@ -196,73 +153,156 @@ export default function Home() {
         path="/"
         structuredData={homeSchema}
       />
-      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
-      <header className="relative w-full h-screen overflow-hidden">
-        {SLIDES.map((src, i) => (
-          <div
-            key={src}
-            className={`absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out ${i === activeSlide ? "opacity-100" : ""}`}
-          >
-            {/* Hero slides are above the fold — load eagerly */}
-            <img
-              src={src}
-              alt="Subham sustainable architecture"
-              loading="eager"
-              decoding="sync"
-              className={`w-full h-full object-cover ${i === activeSlide ? "animate-[kenburns_8s_ease-in-out_forwards]" : ""}`}
-            />
-          </div>
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1F1F1F]/55 via-[#1F1F1F]/30 to-[#1F1F1F]/10" />
 
-        <div className="absolute left-[6%] bottom-[18%] z-10 max-w-[calc(100%-48px)] md:max-w-[660px]">
-          {/* Visually hidden H1 for SEO — visible tagline is decorative spans below */}
-          <h1 className="sr-only">Sustainable Construction &amp; Architecture Consultants in Chennai — Subham Consulting</h1>
-          <div className="overflow-hidden" aria-hidden="true">
+      {/* ─── HERO ─────────────────────────────────────────────────────────── */}
+      <header
+        style={{
+          position: "relative",
+          width: "100%",
+          height: "100vh",
+          minHeight: "100vh",
+          overflow: "hidden",
+          backgroundColor: "#000",
+        }}
+      >
+        {/* ── Fallback image: visible while the video loads or on devices
+            where autoplay is blocked. z-index: 0 keeps it behind the video. */}
+        <img
+          src={heroFallback}
+          alt="Subham sustainable architecture"
+          loading="eager"
+          decoding="sync"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: 0,
+          }}
+        />
+
+        {/* ── Cloudinary background video
+            Uses the same cover-sizing approach as the old YouTube iframe.
+            All sizing lives in index.css via .cloudinary-hero-video. */}
+        <video
+          className="cloudinary-hero-video"
+          src={HERO_VIDEO_URL}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          disablePictureInPicture
+          tabIndex={-1}
+        />
+
+        {/* ── Dark cinematic overlay */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(135deg, rgba(31,31,31,0.55) 0%, rgba(31,31,31,0.30) 50%, rgba(31,31,31,0.10) 100%)",
+            zIndex: 2,
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* ── Hero text content */}
+        <div
+          style={{
+            position: "absolute",
+            left: "6%",
+            bottom: "18%",
+            zIndex: 10,
+            maxWidth: "min(calc(100% - 48px), 660px)",
+          }}
+        >
+          <h1 className="sr-only">
+            Sustainable Construction &amp; Architecture Consultants in Chennai — Subham Consulting
+          </h1>
+
+          <div style={{ overflow: "hidden" }} aria-hidden="true">
             <span
-              className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${showHl1 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"}`}
+              className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                showHl1 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"
+              }`}
             >
               Luxury That
             </span>
           </div>
-          <span className="block w-[60px] h-[1px] bg-white/50 my-[18px]" aria-hidden="true" />
-          <div className="overflow-hidden" aria-hidden="true">
+
+          <span
+            style={{
+              display: "block",
+              width: 60,
+              height: 1,
+              background: "rgba(255,255,255,0.5)",
+              margin: "18px 0",
+            }}
+            aria-hidden="true"
+          />
+
+          <div style={{ overflow: "hidden" }} aria-hidden="true">
             <span
-              className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${showHl2 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"}`}
+              className={`block font-serif text-[40px] sm:text-[52px] md:text-[64px] lg:text-[82px] font-normal text-white leading-none transition-all duration-900 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                showHl2 ? "translate-y-0 opacity-100" : "translate-y-[50px] opacity-0"
+              }`}
             >
               Breathes
             </span>
           </div>
-          <span className="block w-[60px] h-[1px] bg-white/50 my-[18px] ml-auto" aria-hidden="true" />
+
+          <span
+            style={{
+              display: "block",
+              width: 60,
+              height: 1,
+              background: "rgba(255,255,255,0.5)",
+              margin: "18px 0 0 auto",
+            }}
+            aria-hidden="true"
+          />
         </div>
 
-        {/* Decorative hexagons */}
-        <div className="absolute top-[20%] right-[10%] w-40 h-40 hexagon-float opacity-50 z-[30] hidden md:block">
+        {/* ── Decorative hexagons */}
+        <div className="absolute top-[20%] right-[10%] w-40 h-40 hexagon-float opacity-50 z-10 hidden md:block">
           <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-white stroke-[2]">
             <path d="M50 5 L90 28 L90 72 L50 95 L10 72 L10 28 Z" />
           </svg>
         </div>
-        <div className="absolute top-[60%] left-[15%] w-32 h-32 hexagon-float-slow opacity-40 z-[30] hidden lg:block" style={{ animationDelay: "-3s" }}>
+        <div
+          className="absolute top-[60%] left-[15%] w-32 h-32 hexagon-float-slow opacity-40 z-10 hidden lg:block"
+          style={{ animationDelay: "-3s" }}
+        >
           <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-white stroke-[1.5]">
             <path d="M50 5 L90 28 L90 72 L50 95 L10 72 L10 28 Z" />
           </svg>
         </div>
-        <div className="absolute bottom-[25%] left-[40%] w-24 h-24 hexagon-float-reverse opacity-35 z-[30] hidden md:block" style={{ animationDelay: "-8s" }}>
+        <div
+          className="absolute bottom-[25%] left-[40%] w-24 h-24 hexagon-float-reverse opacity-35 z-10 hidden md:block"
+          style={{ animationDelay: "-8s" }}
+        >
           <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-white stroke-1">
             <path d="M50 5 L90 28 L90 72 L50 95 L10 72 L10 28 Z" />
           </svg>
         </div>
 
-        {/* Scroll indicator — fixed typo: height-[34px] → h-[34px] */}
+        {/* ── Scroll indicator */}
         <div
-          className={`absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 transition-opacity duration-600 ${showScroll ? "opacity-100" : "opacity-0"}`}
+          className={`absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 transition-opacity duration-600 ${
+            showScroll ? "opacity-100" : "opacity-0"
+          }`}
         >
-          <div
-            className="w-[22px] h-[34px] border-[1.5px] border-white rounded-[12px] relative after:content-[''] after:absolute after:left-1/2 after:top-[6px] after:-translate-x-1/2 after:w-[2px] after:h-[5px] after:bg-white after:rounded-[2px] after:animate-[mousedot_1.8s_ease-in-out_infinite]"
-          />
-          <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/70 mt-1.5">Scroll Down</div>
+          <div className="w-[22px] h-[34px] border-[1.5px] border-white rounded-[12px] relative after:content-[''] after:absolute after:left-1/2 after:top-[6px] after:-translate-x-1/2 after:w-[2px] after:h-[5px] after:bg-white after:rounded-[2px] after:animate-[mousedot_1.8s_ease-in-out_infinite]" />
+          <div className="font-sans text-[10px] uppercase tracking-[0.2em] text-white/70 mt-1.5">
+            Scroll Down
+          </div>
         </div>
       </header>
+
 
       {/* ─── PHILOSOPHY INTRO ─────────────────────────────────────────────── */}
       <section className="bg-brand-bg px-6 md:px-12 lg:px-20 py-[80px] md:py-[120px] text-center relative overflow-hidden">
@@ -419,7 +459,6 @@ export default function Home() {
       {/* ─── QUOTE BLEED ──────────────────────────────────────────────────── */}
       <section className="relative w-full h-[240px] sm:h-[280px] md:h-[820px] overflow-hidden bg-white" ref={quoteSec}>
         <img
-          // ref={quoteRef}
           src={projectLandscape}
           alt="Mountain landscape"
           loading="lazy"

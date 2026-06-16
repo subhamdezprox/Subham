@@ -60,6 +60,110 @@ img {
   max-width: 100%;
 }
 
+video {
+  display: block;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.18);
+  transform-origin: center center;
+}
+
+.hero-fallback-media {
+  z-index: 0;
+}
+
+/* ─── Cloudinary Hero Background Video ───────────────────────────────────────
+ *
+ * GOAL: behave exactly like object-fit: cover on any aspect ratio video.
+ * The <video> must always overflow and crop — never letterbox or pillarbox.
+ *
+ * COVER FORMULA (works for any viewport orientation):
+ *
+ *   We need:  rendered_width  >= viewport_width   (no side black bars)
+ *             rendered_height >= viewport_height  (no top/bottom black bars)
+ *
+ *   Assuming the video is 16:9 (the most common format):
+ *     rendered_height = rendered_width * (9/16)
+ *     rendered_width  = rendered_height * (16/9)
+ *
+ *   We set:
+ *     width  = 177.77778vh  (= 100vh × 16/9)
+ *     height = 56.25vw      (= 100vw × 9/16)
+ *
+ *   PORTRAIT  (e.g. 390 × 844 phone):
+ *     width  = 177.78 × 844px ≈ 1500px  ✓ (>> 390vw)
+ *     height = 56.25  × 390px ≈ 219px   — not enough
+ *     → min-height: 100% kicks in → height = 844px ✓
+ *
+ *   LANDSCAPE (e.g. 844 × 390 phone):
+ *     width  = 177.78 × 390px ≈ 693px   — not enough
+ *     → min-width: 100% kicks in → width = 844px ✓
+ *     height = 56.25  × 844px ≈ 474px   ✓ (>> 390vh)
+ *
+ *   EXACT 16:9 (e.g. 1920 × 1080 desktop):
+ *     width  = 177.78 × 1080px = 1920px ✓
+ *     height = 56.25  × 1920px = 1080px ✓  — perfect fit
+ *
+ *   ULTRAWIDE (e.g. 3440 × 1440):
+ *     width  = 177.78 × 1440px ≈ 2560px  — not enough
+ *     → min-width: 100% kicks in → width = 3440px ✓
+ *     height = 56.25  × 3440px ≈ 1935px  ✓ (>> 1440vh)
+ *
+ * Using a native <video> instead of a YouTube iframe gives us:
+ *   • true object-fit: cover support (we set it directly)
+ *   • no third-party cookie / consent issues
+ *   • faster load — no iframe + YouTube JS payload
+ *   • no autoplay blocking quirks from the embed API
+ *
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+.cloudinary-hero-video {
+  /* Sit above the fallback image (z:0), below the overlay (z:2) */
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  /* Cover sizing — see formula above */
+  width: 177.77778vh;
+  height: 56.25vw;
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Centre the video within the hero */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Native cover behaviour as a safety net */
+  object-fit: cover;
+  object-position: center center;
+
+  /* No pointer / touch events */
+  pointer-events: none;
+
+  /* GPU compositing layer for smooth playback */
+  will-change: transform;
+}
+
+@media (max-width: 767px) {
+  .hero-media {
+    transform: scale(1.35);
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-media {
+    transform: scale(1.22);
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
